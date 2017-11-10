@@ -1,0 +1,40 @@
+.category{
+    border: 1px solid black;
+    display: inline-block;
+    width: 49%;
+    font-size: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:3px;
+    margin-bottom: 3px;
+    text-align: center;
+    background-color: lightcoral;
+}
+
+.resultsParent{
+    font-size: 15px;
+    background: grey;
+    width: 100%;
+}
+
+h3{
+    font-size: 25px;
+    
+    margin: 0;
+}
+
+.weightTotal{
+
+    font-size: 15px;
+}
+.addBtn{
+    margin: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: inline-block;
+}
+
+.topCategory{
+    position: relative;
+}

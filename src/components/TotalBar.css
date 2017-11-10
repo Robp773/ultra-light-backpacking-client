@@ -1,0 +1,23 @@
+.totalBarContainer{
+    background: darkgrey;
+    font-size: 0;
+    text-align: center;
+}
+
+header{
+    font-size: 35px;    
+}
+.headerBtns{
+    display: inline-block;
+width: 50%;
+}
+.totalContainer{
+    display: inline-block;
+    font-size: 15px;
+    width: 50%;
+    
+    margin-top: 3px;
+}
+
+
+
