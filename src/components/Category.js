@@ -20,6 +20,7 @@ export default class Category extends React.Component{
 
 
 render(){
+      console.log(this.props.thisState.length)
     let buttonSymbol, addForm;
     if(this.state.formOpen === true){
      buttonSymbol = '-'
@@ -53,11 +54,11 @@ const displayState = this.props.thisState.map((item, index)=>{
 
     <div className='topCategory'>
     <h3>{this.props.title}</h3>
-    <div className='weightTotal'>{weightTotal} ounces</div>    
+    <div className='itemTotal'>{this.props.thisState.length} items</div> 
+    <div className='weightTotal'>{weightTotal} ounces</div>
     <button onClick={(e)=> {
         e.stopPropagation()
-         this.setState({formOpen: !this.state.formOpen})} }className='addBtn'>{buttonSymbol}</button>
-    
+         this.setState({formOpen: !this.state.formOpen})} } className='addBtn'>{buttonSymbol}</button>
     </div>
 
     {/* Add Form */}
@@ -83,7 +84,8 @@ const displayState = this.props.thisState.map((item, index)=>{
 
     <div className='topCategory'>
     <h3>{this.props.title}</h3>
-    <div className='weightTotal'>{weightTotal} ounces</div>
+    <div className='itemTotal'>{this.props.thisState.length} items</div> 
+    <div className='weightTotal'>{weightTotal} ounces</div> 
     </div>
     </section>
  )

@@ -19,7 +19,7 @@ h3{
     margin: 0;
 }
 
-.weightTotal{
+.weightTotal, .itemTotal{
 
     font-size: 15px;
 }
@@ -33,4 +33,7 @@ h3{
 
 .topCategory{
     position: relative;
+}
+div{
+    font-size: 15px;
 }
