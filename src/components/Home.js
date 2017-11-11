@@ -3,6 +3,7 @@ import './Home.css';
 import Category from './Category';
 import TotalBar from './TotalBar';
 import {connect} from 'react-redux';
+
 export class Home extends React.Component{
 super(props){
     constructor(props);
@@ -12,12 +13,11 @@ render(){
     return(
             <div className='homePage'>
                 <TotalBar/>
-                <div className='row'>
-                    <Category title='Hiking' thisState={this.props.hiking}/>
+                <Category title='Hiking' thisState={this.props.hiking}/>
                 <Category title='Clothing' thisState={this.props.clothing}/>
-                </div>
-                
+
                 <Category title='Navigation' thisState={this.props.navigation}/>
+
                 <Category title='Shelter' thisState={this.props.shelter}/>
                 <Category title='Sleep' thisState={this.props.sleep}/>
                 <Category title='Cooking' thisState={this.props.cooking}/>
