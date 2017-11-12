@@ -1,12 +1,15 @@
 import React from 'react';
-import './TotalBar.css'
+import './TotalBar.css';
+import SignUp from './SignUp'
+import {Link, BrowserRouter as Router} from 'react-router-dom';
+
 export default function TotalBar(props){
     return(
         <div className='totalBarContainer'>
             <div className='headerBtns'>   
                 <header>Pack Light</header>
-                <button>Sign Up</button>
-                <button>Sign In</button>
+                <button><Link to='/signup'>Sign Up</Link></button>
+                <button><Link to='/signin'>Sign In</Link></button>
             </div>
          
             <div className='totalContainer'>    
@@ -14,7 +17,6 @@ export default function TotalBar(props){
                 <div>Total Items: 54</div>
                 <div>Weight Goal: 300 ounces</div>
            </div>
-        
         </div>
     )
 }
