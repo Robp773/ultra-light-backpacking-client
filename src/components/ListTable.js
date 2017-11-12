@@ -3,6 +3,7 @@ import './ListTable.css';
 export default function ListTable(props){
 
     return (
+        <div className='scrollableParent'>
         <table className='resultsParent'>
             <tbody>
                 <tr>
@@ -12,5 +13,6 @@ export default function ListTable(props){
                 {props.displayState}
            </tbody>
         </table>
+        </div>
     )
 }
