@@ -1,4 +1,6 @@
-export const updateTotals = (num) => ({
-    type: updateTotals,
-    update: num
-});
+
+export const updateTotals = (weight, items) => ({
+    type: 'UPDATE_TOTALS',
+    weight: weight,
+    items: items
+})

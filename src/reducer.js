@@ -135,6 +135,11 @@ const initialState = {
 }
 
 export const reducer =  (state = initialState, action) =>{	
+	if(action.type === 'UPDATE_TOTALS'){		
+		
+		return Object.assign({}, state, {totalWeight: state.totalWeight + action.weight, 
+			totalItems: state.totalItems + action.items})
+	}
 	
 return state;
 
