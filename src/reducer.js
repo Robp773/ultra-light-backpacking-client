@@ -1,6 +1,7 @@
 const initialState = {
     totalWeight: 0,
-    totalItems: 0,
+		totalItems: 0,
+		weightGoal: 240,
     // hiking clothing navigation shelter sleep cooking water hygiene first aid misc
 	hiking: [
         {
@@ -133,13 +134,12 @@ const initialState = {
 	}],
 }
 
-
-    
-    
-    
-
-export default(state, action)=>{
-	state = state || initialState;
+export const reducer =  (state = initialState, action) =>{	
 	
 return state;
+
 }
+
+
+    
+    
