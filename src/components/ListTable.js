@@ -1,18 +1,20 @@
 import React from 'react';
 import './ListTable.css';
-export default function ListTable(props){
+export default class ListTable extends React.Component{
 
-    return (
+render(){
+
+        return (
         <div className='scrollableParent'>
-        <table className='resultsParent'>
-            <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th>Weight</th>
-                </tr>
-                {props.displayState}
-           </tbody>
-        </table>
+                    <h4>Name</h4>
+                    <h4>Weight</h4>
+            <form>{this.props.displayItems}</form>
+              
+              
+                
+                
         </div>
     )
+}
+
 }

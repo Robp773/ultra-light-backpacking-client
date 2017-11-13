@@ -1,4 +1,21 @@
 .scrollableParent{
+    background: lightgreen;
+    font-size: 0;
+    text-align: center;
     overflow: scroll;
     max-height: 200px;
+}
+.weightColumn, .nameColumn{
+    display: inline-block;
+    width: 50%;
+    font-size: 15px;
+}
+h4{
+    margin: 0;
+    display: inline-block;
+    width: 45%;
+    font-size: 15px;
+}
+form{
+    font-size: 15px;
 }
