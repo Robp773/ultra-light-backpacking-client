@@ -36,3 +36,14 @@ h3{
 div{
     font-size: 15px;
 }
+.resultItemSection{
+    display: block;
+    font-size: 0;
+
+}
+input{
+    width: 40%;
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+}
