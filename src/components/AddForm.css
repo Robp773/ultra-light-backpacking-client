@@ -1,7 +1,4 @@
-input{
-    display: block;
-    margin: auto;
-}
+
 
 form{
     width: fit-content;
@@ -11,4 +8,8 @@ form{
     margin-right: auto;
     padding:10px;
     background-color: beige;
+}
+.addInput{
+    display: block;
+    width: 100%
 }
