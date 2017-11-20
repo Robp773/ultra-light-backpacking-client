@@ -6,6 +6,16 @@ import {connect} from 'react-redux';
 export class TotalBar extends React.Component{
  
     render(){
+        let unitOfMeasurement, updatedWeight;
+        if(this.props.totalWeight < 16){
+            updatedWeight = this.props.totalWeight;
+                    unitOfMeasurement = 'ozs'
+        }
+        else{
+            updatedWeight = this.props.totalWeight * .0625
+            unitOfMeasurement = 'lbs'
+            
+        }
         return(
         <div className='totalBarContainer'>
             <div className='headerBtns'>   
@@ -15,9 +25,9 @@ export class TotalBar extends React.Component{
             </div>
          
             <div className='totalContainer'>    
-                <div>Total Packed Weight: {this.props.totalWeight}</div>
+                <div>Total Weight: {updatedWeight} {unitOfMeasurement}</div>
                 <div>Total Items: {this.props.totalItems}</div>
-                <div>Weight Goal: {this.props.weightGoal} ounces</div>
+                <div>Weight Goal: {this.props.weightGoal} lbs </div>
            </div>
         </div>
     ) 
