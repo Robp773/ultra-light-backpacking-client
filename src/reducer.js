@@ -134,15 +134,17 @@ const initialState = {
 	}],
 }
 
-export const reducer =  (state = initialState, action) =>{	
-	if(action.type === 'UPDATE_TOTALS'){		
-		
-		return Object.assign({}, state, {totalWeight: state.totalWeight + action.weight, 
-			totalItems: state.totalItems + action.items})
-	}
+export const reducer =  (state = initialState, action) =>{
 	
+	if(action.type === 'ADD_ITEM'){
+		
+		let title = action.title;
+		let foundObj = state[title]
+		console.log('add item')
+		return Object.assign({}, state, {hiking:[ ...state.hiking, {name: action.name, weight: action.weight}]})	
+	
+	}
 return state;
-
 }
 
 

@@ -1,6 +1,7 @@
 
-export const updateTotals = (weight, items) => ({
-    type: 'UPDATE_TOTALS',
+export const addItem = (name, weight, title) =>({
+    type: 'ADD_ITEM',
+    name: name,
     weight: weight,
-    items: items
+    title: title
 })
