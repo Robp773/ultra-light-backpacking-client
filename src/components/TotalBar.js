@@ -3,16 +3,20 @@ import './TotalBar.css';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-export class TotalBar extends React.Component{
+export default class TotalBar extends React.Component{
  
     render(){
-        let unitOfMeasurement, updatedWeight;
+        const totalsObj = this.props.totals;
+
+        console.log(totalsObj.totalItems)
+
+        let unitOfMeasurement, unitWeight;
         if(this.props.totalWeight < 16){
-            updatedWeight = this.props.totalWeight;
+            unitWeight = totalsObj.totalWeight;
                     unitOfMeasurement = 'ozs'
         }
         else{
-            updatedWeight = this.props.totalWeight * .0625
+            unitWeight = totalsObj.totalWeight * .0625
             unitOfMeasurement = 'lbs'
             
         }
@@ -25,21 +29,12 @@ export class TotalBar extends React.Component{
             </div>
          
             <div className='totalContainer'>    
-                <div>Total Weight: {updatedWeight} {unitOfMeasurement}</div>
-                <div>Total Items: {this.props.totalItems}</div>
-                <div>Weight Goal: {this.props.weightGoal} lbs </div>
+                <div>Total Weight: {unitWeight} {unitOfMeasurement}</div>
+                <div>Total Items: {totalsObj.totalItems}</div>
+                <div>Weight Goal: {totalsObj.weightGoal} lbs </div>
            </div>
         </div>
     ) 
     }
 }
 
-const mapStateToProps = state => ({
-    totalWeight: state.totalWeight,
-    totalItems: state.totalItems,
-    weightGoal: state.weightGoal
-    });        
-
-
-
-export default connect(mapStateToProps)(TotalBar)
