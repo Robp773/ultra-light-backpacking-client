@@ -3,9 +3,11 @@ import './Category.css';
 import AddForm from './AddForm';
 import ListTable from './ListTable';
 import CategoryTotal from './CategoryTotal';
-import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {updateItem, deleteItem} from '../actions'
 
-export default class Category extends React.Component{
+
+export class Category extends React.Component{
 
     constructor(props){
         super(props);    
@@ -13,12 +15,19 @@ export default class Category extends React.Component{
         this.state ={
     selected: false,
     formOpen: false,
-    editFormOpen: false
 } 
 
 }
 
+handleChange(currentState, index){
+this.props.dispatch(updateItem(currentState,  index, this.props.title.toLowerCase()))
+}
+handleDeleteClick(name, weight){
+this.props.dispatch(deleteItem(this.props.title.toLowerCase(), name, weight))
+}
+
 render(){
+
     let weightTotal= 0;
     let buttonSymbol, addForm;
     
@@ -29,24 +38,23 @@ render(){
     else{
         buttonSymbol = '+'
     }  
-       const displayItems = this.props.thisState.map((item, index)=>{  
+    const displayItems = this.props.thisState.map((item, index)=>{  
         weightTotal += item.weight;
-        
+                 const name = 'name'+ index;
+                 const weight = 'weight' + index;
+
        return ( 
-         
-        <fieldset key={index} onChange={()=>{}}>
-            <input type='text' onClick={(e)=>{e.stopPropagation(); 
+
+        <fieldset key={index} onChange={()=>this.handleChange({name: this[name].value, weight: this[weight].value}, index)}>
+
+            <input ref={(input)=>{this[name] = input}} type='text' onClick={(e)=>{e.stopPropagation(); 
         }}defaultValue={item.name} className='indivResult'/>
-       
-       
       
-        <input type='text' onClick={(e)=>{e.stopPropagation();
+        <input ref={(input)=>{this[weight] = input}} type='text' onClick={(e)=>{e.stopPropagation();
         }}defaultValue={item.weight} className='indivResult' />
-            <button className='deleteBtn' onClick={(e)=>{
-                e.stopPropagation()
-                e.preventDefault()
-               }}>
-                <i className="fa fa-trash" aria-hidden="true"></i>
+
+            <button className='deleteBtn' onClick={(e)=>{e.stopPropagation(); e.preventDefault()}}>
+                <i onClick={()=>this.handleDeleteClick(this[name].value, this[weight].value)} className="fa fa-trash" aria-hidden="true"></i>
             </button>
 
         </fieldset>
@@ -81,3 +89,4 @@ render(){
 }
 
 }
+export default connect()(Category)
