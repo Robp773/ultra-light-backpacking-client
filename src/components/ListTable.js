@@ -1,5 +1,7 @@
 import React from 'react';
 import './ListTable.css';
+import {reduxForm, Field} from 'redux-form';
+
 export default class ListTable extends React.Component{
 
 render(){
@@ -8,7 +10,11 @@ render(){
         <div className='scrollableParent'>
                     <h4>Name</h4>
                     <h4>Weight</h4>
-            <form>{this.props.displayItems}</form>
+            <form>
+                    
+                    {this.props.displayItems}
+                                        
+                    </form>
               
               
                 
@@ -18,3 +24,4 @@ render(){
 }
 
 }
+// export default reduxForm({form: 'listTable'})(ListTable);
