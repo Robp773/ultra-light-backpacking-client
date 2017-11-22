@@ -21,11 +21,11 @@ this.props.dispatch(updateGoal(value))
 
         let unitOfMeasurement, unitWeight;
         if(this.props.totalWeight < 16){
-            unitWeight = totalsObj.totalWeight;
+            unitWeight = totalsObj.totalWeight.toFixed(2);
                     unitOfMeasurement = 'ozs'
         }
         else{
-            unitWeight = totalsObj.totalWeight * .0625
+            unitWeight = (totalsObj.totalWeight * .0625).toFixed(2)
             unitOfMeasurement = 'lbs'
             
         }
