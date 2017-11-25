@@ -47,3 +47,6 @@ input{
     display: inline-block;
     font-size: 15px;
 }
+.deleteBtn{
+    margin: 3px;
+}
