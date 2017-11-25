@@ -6,49 +6,51 @@ import {updateGoal} from '../actions';
 export  class TotalBar extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            editGoal: false
-        }
-        
+         
     }
  handleInputChange(value){
-console.log(value) 
 this.props.dispatch(updateGoal(value))
 }
     render(){
-        const totalsObj = this.props.totals;
 
+        const totalsObj = this.props.totals;  
 
-        let unitOfMeasurement, unitWeight;
-        if(this.props.totalWeight < 16){
-            unitWeight = totalsObj.totalWeight.toFixed(2);
-                    unitOfMeasurement = 'ozs'
-        }
-        else{
-            unitWeight = (totalsObj.totalWeight * .0625).toFixed(2)
-            unitOfMeasurement = 'lbs'
+        let totalLbs, weightClass;
+     
+        totalLbs= (totalsObj.totalWeight * .0625).toFixed(2)
             
-        }
-
-        if(this.state.editGoal === true){
-            // goalForm = (<form>
-            //     <input type='text' placeholder='Goal Weight in ozs'/>
-            //             </form>)
-        }
+        
+console.log(totalsObj.totalWeight)
+  if(totalsObj.totalWeight  <= 15){
+      console.log('ultra light')
+  }
         return(
         <div className='totalBarContainer'>
-            <div className='headerBtns'>   
+            <div className='headerBtnContainer'> 
                 <header>Pack Light</header>
-                <button><Link to='/signup'>Sign Up</Link></button>
-                <button><Link to='/signin'>Sign In</Link></button>
+                <button className='saveBtn'>Save</button>
             </div>
-         
-            <div className='totalContainer'>    
-                <div>Total Weight: {unitWeight} {unitOfMeasurement}</div>
-                <div>Total Items: {totalsObj.totalItems}</div>
-                <label>Weight Goal: </label>
-                <input ref={(input) => this.goalInput = input} className='setGoal' placeholder= {totalsObj.weightGoal + ' pds'} onChange={()=> this.handleInputChange(this.goalInput.value)}/>
+                        
+
+            <div className='totalContainer'> 
+
+            <div>   
+                <div className='divResult'>Total Weight:</div>
+                <div className='divTotal' >{totalLbs} lbs</div>
+            </div>
+             
+                <div> 
+                    <div className='divResult'>Total Items: </div>
+                    <div className='divTotal'>{totalsObj.totalItems}</div>
+                </div>
+
+                <div>  
+                    <div className='divResult'>Weight Goal: </div>
+                    <div className='divTotal'><input ref={(input) => this.goalInput = input} className='setGoal' placeholder= {totalsObj.weightGoal} onChange={()=> this.handleInputChange(this.goalInput.value)}/> lbs</div>
+                    {/* <div className='lbsDiv'> lbs</div> */}
+                </div>
            </div>
+           <div className='weightClass'>{weightClass}</div>
         </div>
     ) 
     }

@@ -2,24 +2,36 @@
     background: darkgrey;
     font-size: 0;
     text-align: center;
+    padding: 5px;
 }
 
 header{
+    display: inline-block;
     font-size: 35px;    
 }
-.headerBtns{
-    display: inline-block;
-width: 50%;
-}
+
 .totalContainer{
     display: inline-block;
     font-size: 15px;
     width: 50%;
-    
+    text-align: left;
     margin-top: 3px;
 }
 .setGoal:hover{
-background: white;
 }
 
+.divTotal, .divResult{
+    width: 50%;
+    display: inline-block;
+}
+.divTotal{
+    text-align: center;
+}
+.saveBtn{
+    width: 50%;
+}
+.headerBtnContainer{
+    display: inline-block;
+    width: 50%;
+}
 
