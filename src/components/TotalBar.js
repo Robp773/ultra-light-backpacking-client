@@ -1,13 +1,9 @@
 import React from 'react';
 import './TotalBar.css';
 import {connect} from 'react-redux';
-import {Link} from 'react-router-dom';
 import {updateGoal} from '../actions';
 export  class TotalBar extends React.Component{
-    constructor(props){
-        super(props);
-         
-    }
+
  handleInputChange(value){
 this.props.dispatch(updateGoal(value))
 }
@@ -20,15 +16,15 @@ this.props.dispatch(updateGoal(value))
         totalLbs= (totalsObj.totalWeight * .0625).toFixed(2)
             
         
-console.log(totalsObj.totalWeight)
   if(totalsObj.totalWeight  <= 15){
-      console.log('ultra light')
   }
         return(
         <div className='totalBarContainer'>
             <div className='headerBtnContainer'> 
                 <header>Pack Light</header>
-                <button className='saveBtn'>Save</button>
+                <button className='saveBtn' onClick={()=>{
+
+                }}>Save</button>
             </div>
                         
 
@@ -46,8 +42,10 @@ console.log(totalsObj.totalWeight)
 
                 <div>  
                     <div className='divResult'>Weight Goal: </div>
-                    <div className='divTotal'><input ref={(input) => this.goalInput = input} className='setGoal' placeholder= {totalsObj.weightGoal} onChange={()=> this.handleInputChange(this.goalInput.value)}/> lbs</div>
-                    {/* <div className='lbsDiv'> lbs</div> */}
+                    <div className='divTotal'>
+                    <input ref={(input) => this.goalInput = input} type='number' className='setGoal' placeholder= {totalsObj.weightGoal} 
+                    onChange={()=>{this.handleInputChange(Number(this.goalInput.value))}}/>lbs
+                    </div>
                 </div>
            </div>
            <div className='weightClass'>{weightClass}</div>
