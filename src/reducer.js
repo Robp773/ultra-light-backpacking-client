@@ -1,10 +1,7 @@
-import { updateItem } from "./actions";
+const initialState =
+ {
 
-const initialState = {
-    totalWeight: 0,
-		totalItems: 0,
 		weightGoal: 15,
-    // hiking clothing navigation shelter sleep cooking water hygiene first aid misc
 	hiking: [
         {
 		name: 'Backpack',
@@ -137,18 +134,17 @@ const initialState = {
 }
 
 export const reducer =  (state = initialState, action) =>{
-	
+
 	if(action.type === 'ADD_ITEM'){
 
 		return Object.assign({}, state, {[action.title]:[ ...state[action.title], {name: action.name, weight: action.weight}]})	
-	
 	}
 	if(action.type === 'UPDATE_ITEM'){		
 		// action.title = the category title the action came from ex. 'hiking'
 		// action.name / action.weight make up the update object ex. {name: 'test', weight: 4} 
 		// action.index = the index of the input being updated
 		// assigning the update object to the same position in the state that the original object was in.
-		return Object.assign({}, state, state[action.title][action.index] = {name: action.name, weight: action.weight})
+		return Object.assign({}, state, state[action.title][action.index] = {name: action.name, weight: Number(action.weight)})
 
 	}
 	if(action.type === 'DELETE_ITEM'){
