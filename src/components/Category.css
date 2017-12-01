@@ -2,7 +2,6 @@
     position: relative;
     border: 1px solid black;
     font-size: 0;
-    margin-top:3px;
     margin-bottom: 3px;
     text-align: center;
     background-color: lightcoral;
@@ -50,3 +49,14 @@ input{
 .deleteBtn{
     margin: 3px;
 }
+
+@media screen and (min-width: 550px) {
+    .homePage{
+        font-size: 0;
+    }
+    .category{
+        display: inline-block;
+        width: 49%;
+    }
+}
+    

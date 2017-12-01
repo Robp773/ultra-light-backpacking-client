@@ -3,6 +3,7 @@
     font-size: 0;
     text-align: center;
     padding: 5px;
+    margin-bottom: 3px;
 }
 
 header{
@@ -34,4 +35,22 @@ header{
     display: inline-block;
     width: 50%;
 }
+
+
+@media screen and (min-width: 550px) {
+header{
+    display: block;
+}
+.totalContainer{
+    text-align: center;
+}
+.divTotal, .divResult{
+    width: 20%;
+}
+.saveBtn{
+    width: 25%;
+}
+}
+    
+
 
