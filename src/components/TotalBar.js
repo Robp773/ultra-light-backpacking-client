@@ -2,7 +2,7 @@ import React from 'react';
 import './TotalBar.css';
 import {connect} from 'react-redux';
 import {updateGoal} from '../actions';
-export  class TotalBar extends React.Component{
+export class TotalBar extends React.Component{
 
  handleInputChange(value){
 this.props.dispatch(updateGoal(value))
@@ -15,9 +15,6 @@ this.props.dispatch(updateGoal(value))
      
         totalLbs= (totalsObj.totalWeight * .0625).toFixed(2)
             
-        
-  if(totalsObj.totalWeight  <= 15){
-  }
         return(
         <div className='totalBarContainer'>
             <div className='headerBtnContainer'> 
