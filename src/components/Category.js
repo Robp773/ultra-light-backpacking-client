@@ -4,8 +4,7 @@ import AddForm from './AddForm';
 import ListTable from './ListTable';
 import CategoryTotal from './CategoryTotal';
 import {connect} from 'react-redux';
-import {updateItem, deleteItem} from '../actions'
-
+import {updateItem, deleteItem} from '../actions';
 
 export class Category extends React.Component{
 
@@ -19,16 +18,17 @@ export class Category extends React.Component{
 
 }
 
-handleChange(currentState, index){
-this.props.dispatch(updateItem(currentState,  index, this.props.title.toLowerCase()))
+handleChange(values, index){
+this.props.dispatch(updateItem(values, index, this.props.title.toLowerCase()))
 }
-handleDeleteClick(name, weight){
-this.props.dispatch(deleteItem(this.props.title.toLowerCase(), name, weight))
+handleDeleteClick(index){
+this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index))
 }
 
-render(){
+render(){    
+    console.log('category render')
 
-    let weightTotal= 0;
+    let weightTotal = 0;
     let buttonSymbol, addForm;
     
     if(this.state.formOpen === true){
@@ -38,14 +38,16 @@ render(){
     else{
         buttonSymbol = '+'
     }  
-    const displayItems = this.props.thisState.map((item, index)=>{  
+    const displayItems = this.props.thisState.map((item, index)=>{       
+ 
         weightTotal += item.weight;
                  const name = 'name'+ index;
                  const weight = 'weight' + index;
 
        return ( 
 
-        <fieldset key={index} onChange={()=>this.handleChange({name: this[name].value, weight: this[weight].value}, index)}>
+        <fieldset key={index} onChange={()=>{
+        this.handleChange({name: this[name].value, weight: this[weight].value}, index)}}>
 
             <input ref={(input)=>{this[name] = input}} type='text' onClick={(e)=>{e.stopPropagation(); 
         }}defaultValue={item.name} className='indivResult'/>
@@ -54,7 +56,7 @@ render(){
         }}defaultValue={item.weight} className='indivResult' />
 
             <button className='deleteBtn' onClick={(e)=>{e.stopPropagation(); e.preventDefault()}}>
-                <i onClick={()=>this.handleDeleteClick(this[name].value, this[weight].value)} className="fa fa-trash" aria-hidden="true"></i>
+                <i onClick={()=>this.handleDeleteClick(index)} className="fa fa-trash" aria-hidden="true"></i>
             </button>
 
         </fieldset>
@@ -62,13 +64,11 @@ render(){
 
        )
     })
-
     const loadedCategory = <CategoryTotal title= {this.props.title} 
                             itemTotal={this.props.thisState.length} 
                             weightTotal={weightTotal} />
     
     if(this.state.selected === true){
-// {e.preventDefault();
     return (
     <section className='category' onClick={()=> {this.setState({selected: !this.state.selected})}}>
         {loadedCategory}
