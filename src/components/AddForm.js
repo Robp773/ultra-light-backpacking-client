@@ -1,13 +1,26 @@
 import React from 'react';
 import './AddForm.css'
-export default function AddForm(props){
+import {connect} from 'react-redux';
+import {addItem} from '../actions'
+export class AddForm extends React.Component{
+
+    render(){
     return(
-        <form>
+        <form onClick={(e)=>{e.stopPropagation()}} onSubmit={(e)=>{
+            e.preventDefault();        
+            const name = this.inputName.value
+            const weight = Number(this.inputWeight.value)
+       
+            this.props.dispatch(addItem(name, weight, this.props.title.toLowerCase()))
+        }}>
             <legend>Add Item</legend>
-            <input className='addInput' name='name' type='text' placeholder='Item Name'/>
-            <input className='addInput' name='weight' type='text' placeholder='Item Weight'/>
-            <button type='submit'>Submit</button>
+            <input ref= {(input)=>{this.inputName = input}} className='addInputName' name='name' type='text' placeholder='Item Name'/>
+            <input ref= {(input)=>{this.inputWeight = input}} className='addInputWeight' name='weight' type='number' placeholder='Item Weight'/>
+            <button type='submit' onClick={(e)=>{e.stopPropagation()}}>Submit</button>
         </form>
     )
 }
+}
+
+export default connect()(AddForm)
 
