@@ -10,7 +10,6 @@ super(props){
 }
 
 render(){  
-console.log('ListHome rendering')
     let totalWeight = 0;
     let totalItems = 0;
     const fullState = this.props.fullState;
@@ -22,7 +21,7 @@ console.log('ListHome rendering')
     const cooking = this.props.cooking;
     const water = this.props.water;
     const hygiene = this.props.hygiene;
-    const firstAid = this.props.firstAid;
+    const firstAid = this.props.firstaid;
     const misc = this.props.misc;
     const listArray = [hiking, clothing, navigation, shelter, sleep, cooking, water, hygiene, firstAid, misc];
 
@@ -49,7 +48,7 @@ console.log('ListHome rendering')
                 <Category title='Cooking' thisState={this.props.cooking}/>
                 <Category title='Water' thisState={this.props.water}/>
                 <Category title='Hygiene' thisState={this.props.hygiene}/>
-                <Category title='First Aid' thisState={this.props.firstAid}/>
+                <Category title='First Aid' thisState={this.props.firstaid}/>
                 <Category title='Misc' thisState={this.props.misc}/>
             </div>
     )
@@ -66,7 +65,7 @@ const mapStateToProps = state => ({
     cooking: state.cooking,
     water: state.water,
     hygiene: state.hygiene,
-    firstAid: state.firstAid,
+    firstaid: state.firstaid,
     misc: state.misc
     });        
         
