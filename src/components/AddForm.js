@@ -10,8 +10,8 @@ export class AddForm extends React.Component{
             e.preventDefault();        
             const name = this.inputName.value
             const weight = Number(this.inputWeight.value)
-       
-            this.props.dispatch(addItem(name, weight, this.props.title.toLowerCase()))
+            const readiedTitle = this.props.title.toLowerCase().replace(/\s+/g, "")
+            this.props.dispatch(addItem(name, weight, readiedTitle))
         }}>
             <legend>Add Item</legend>
             <input ref= {(input)=>{this.inputName = input}} className='addInputName' name='name' type='text' placeholder='Item Name'/>
