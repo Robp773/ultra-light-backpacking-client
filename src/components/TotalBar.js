@@ -2,13 +2,24 @@ import React from 'react';
 import './TotalBar.css';
 import {connect} from 'react-redux';
 import {updateGoal} from '../actions';
+import {API_BASE_URL} from '../config';
 export class TotalBar extends React.Component{
 
  handleInputChange(value){
-this.props.dispatch(updateGoal(value))
+ this.props.dispatch(updateGoal(value));
 }
-    render(){
+handleSaveClick(){
+    console.log(JSON.stringify(this.props.fullState))
+    console.log(`${API_BASE_URL}/list-state/${this.props.listName}`)
 
+fetch(`${API_BASE_URL}/list-state/${this.props.listName}`, {
+method: 'put',
+headers: {'Content-Type': 'application/json'},
+body: JSON.stringify(this.props.fullState)
+})
+}
+
+    render(){
         const totalsObj = this.props.totals;  
 
         let totalLbs, weightClass;
@@ -19,12 +30,9 @@ this.props.dispatch(updateGoal(value))
         <div className='totalBarContainer'>
             <div className='headerBtnContainer'> 
                 <header>Pack Light</header>
-                <button className='saveBtn' onClick={()=>{
-
-                }}>Save</button>
+                <button className='saveBtn' onClick={()=>{this.handleSaveClick()}}>Save</button>
             </div>
                         
-
             <div className='totalContainer'> 
 
             <div>   
@@ -50,5 +58,8 @@ this.props.dispatch(updateGoal(value))
     ) 
     }
 }
-
-export default connect()(TotalBar)
+const mapStateToProps = state => ({
+    fullState: state,
+    listName: state.listName
+    });        
+export default connect(mapStateToProps)(TotalBar)
