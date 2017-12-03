@@ -6,7 +6,7 @@ render(){
         return (
         <div className='scrollableParent'>
                     <h4>Name</h4>
-                    <h4>Weight</h4>
+                    <h4>Weight(ozs)</h4>
             <form>
                     {this.props.displayItems}                                   
                     </form>
