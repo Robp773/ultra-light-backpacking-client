@@ -10,14 +10,21 @@
         background: gray;
       
 }
-.listItemsParent{
+.listNamesParent{
     border: 1px solid black;
     margin: auto;
-    width: 75%;
-    background: white;
-}
-.listItem:hover{
-    font-size: 20px;
+    width: 90%;
     background: grey;
+}
 
+.overview{
+    margin: 3px;
+    display: inline-block;
+}
+.overviewParent:hover{
+    background: green;
+}
+.overviewParent{
+    border: 1px solid black;
+    background:white;
 }
