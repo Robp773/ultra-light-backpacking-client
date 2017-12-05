@@ -3,7 +3,6 @@ import './ListHome.css';
 import Category from './Category';
 import TotalBar from './TotalBar';
 import {connect} from 'react-redux';
-import {getState} from '../actions'
 export class ListHome extends React.Component{
 super(props){
     constructor(props);
@@ -12,7 +11,6 @@ super(props){
 render(){  
     let totalWeight = 0;
     let totalItems = 0;
-    const fullState = this.props.fullState;
     const hiking = this.props.hiking;
     const clothing = this.props.clothing;
     const navigation = this.props.navigation;
@@ -30,14 +28,17 @@ render(){
         for(let i =0; i<arrayCategory.length; i++){
               const numberItem = Number(arrayCategory[i].weight)        
 
-             totalWeight += numberItem
+             return totalWeight += numberItem;
            
         }
-        totalItems += arrayCategory.length
-    })
-    
-         const totals = {totalItems: totalItems, totalWeight: totalWeight, weightGoal: this.props.fullState.weightGoal}    
-    return(
+       return  totalItems += arrayCategory.length;
+    })        
+
+    totalWeight = totalWeight * .0625;
+
+    const totals = {totalItems: totalItems, totalWeight: totalWeight, weightGoal: this.props.fullState.weightGoal} 
+ 
+         return(
             <div className='homePage'>
                 <TotalBar totals={totals} totalWeight={totalWeight} />          
                 <Category title='Hiking' thisState={this.props.hiking}/>

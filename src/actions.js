@@ -24,4 +24,4 @@ export const updateGoal = (value) =>({
 export const setListState = (listState)=>({
     type: 'SET_STATE',
     state: listState
-})
+});

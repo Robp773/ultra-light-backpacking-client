@@ -9,9 +9,6 @@ export class TotalBar extends React.Component{
  this.props.dispatch(updateGoal(value));
 }
 handleSaveClick(){
-    console.log(JSON.stringify(this.props.fullState))
-    console.log(`${API_BASE_URL}/list-state/${this.props.listName}`)
-
 fetch(`${API_BASE_URL}/list-state/${this.props.listName}`, {
 method: 'put',
 headers: {'Content-Type': 'application/json'},
@@ -24,8 +21,8 @@ body: JSON.stringify(this.props.fullState)
 
         let totalLbs, weightClass;
      
-        totalLbs= (totalsObj.totalWeight * .0625).toFixed(2)
-            
+        totalLbs= totalsObj.totalWeight.toFixed(2);        
+        
         return(
         <div className='totalBarContainer'>
             <div className='headerBtnContainer'> 
@@ -60,6 +57,7 @@ body: JSON.stringify(this.props.fullState)
 }
 const mapStateToProps = state => ({
     fullState: state,
-    listName: state.listName
+    listName: state.listName,
+    weightTotal: state.weightTotal
     });        
 export default connect(mapStateToProps)(TotalBar)

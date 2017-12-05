@@ -2,7 +2,7 @@ const initialState =
 
  {	listName: 'initialRender',
   	weightGoal: 0,
-	  hiking: [],
+	hiking: [],
     clothing: [],
     navigation: [],
     shelter: [],
