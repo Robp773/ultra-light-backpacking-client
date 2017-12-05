@@ -14,24 +14,32 @@ export class Main extends React.Component{
         }
         this.handleChoice = this.handleChoice.bind(this);
     }
-
+// set the initial state of the client by getting the retrieving the selected list
     handleChoice(listName){
-        fetch(`${API_BASE_URL}/list-state/${listName.listName}`)
+        fetch(`${API_BASE_URL}/list-state/${listName}`)
         .then((res)=>{
             res.json()
-            .then((resJSON)=>{
+            .then((resJSON)=>{        
                 this.props.dispatch(setListState(resJSON))
             })
         })
         this.setState({selectionMade: true})
     }
+    // make a GET request to retrieve the overview of lists created by user
     componentWillMount(){
         fetch(`${API_BASE_URL}/list-state/name-list`)
-        .then((res)=>{
+        .then((res)=>{           
             res.json()
-            .then((resJSON)=>{
-              const listNameDivs = resJSON.map((listName, index)=>{
-                    return (<div className='listNameDiv' key={index} onClick={()=>{this.handleChoice({listName})}}>{listName}</div>)
+            .then((resJSON)=>{            
+                 const listNameDivs = resJSON.map((list, index)=>{
+
+                    return (
+                            <div className='overviewParent' key={index} onClick={()=>{this.handleChoice(list.listName)}}>
+                                <div className='overview'><b>{list.listName}</b></div> 
+                                <div className='overview'>{list.itemTotal}<b> Items</b></div>
+                                <div className='overview'>{list.weightTotal}<b> lbs</b></div>
+                            </div>
+                            )
                 });
                 this.setState({listNames: listNameDivs});
             })
