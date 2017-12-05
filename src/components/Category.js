@@ -7,39 +7,35 @@ import {connect} from 'react-redux';
 import {updateItem, deleteItem} from '../actions';
 
 export class Category extends React.Component{
-
-    constructor(props){
-        super(props);    
         
-        this.state ={
+    state ={
     selected: false,
     formOpen: false,
 } 
 
-}
 
 handleChange(values, index){
-this.props.dispatch(updateItem(values, index, this.props.title.toLowerCase()))
-}
-handleDeleteClick(index){
-this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index))
-}
+    this.props.dispatch(updateItem(values, index, this.props.title.toLowerCase()))
+};
 
-render(){    
-    console.log('category render')
+handleDeleteClick(index){
+    this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index))
+};
+
+render(){
 
     let weightTotal = 0;
     let buttonSymbol, addForm;
     
     if(this.state.formOpen === true){
-     buttonSymbol = '-'
+     buttonSymbol = '-';
      addForm = <AddForm title = {this.props.title}/>
     }
     else{
         buttonSymbol = '+'
     }  
     const displayItems = this.props.thisState.map((item, index)=>{       
- 
+        
         weightTotal += item.weight;
                  const name = 'name'+ index;
                  const weight = 'weight' + index;
@@ -64,6 +60,7 @@ render(){
 
        )
     })
+   
     const loadedCategory = <CategoryTotal title= {this.props.title} 
                             itemTotal={this.props.thisState.length} 
                             weightTotal={weightTotal} />
@@ -73,9 +70,9 @@ render(){
     <section className='category' onClick={()=> {this.setState({selected: !this.state.selected})}}>
         {loadedCategory}
 
-    <button onClick={(e)=> {e.stopPropagation(); this.setState({formOpen: !this.state.formOpen})} } className='addBtn'>{buttonSymbol}</button>
+    <button className='addBtn' onClick={(e)=> {e.stopPropagation(); this.setState({formOpen: !this.state.formOpen})} } >{buttonSymbol}</button>
         {addForm}
-    <ListTable displayItems={displayItems}/>
+    <ListTable className='ListTable' displayItems={displayItems}/>
     </section>
     )
  }
