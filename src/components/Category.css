@@ -41,13 +41,23 @@ div{
 
 }
 input{
-    width: 40%;
     text-align: center;
     display: inline-block;
     font-size: 15px;
 }
 .deleteBtn{
-    margin: 3px;
+    text-align: center;
+    width: 10%;
+    margin-left: 3px;
+}
+.name{
+    width: 60%;
+}
+.weight{
+    width: 15%
+}
+.addOrSub{
+    font-size: 10px;
 }
 
 @media screen and (min-width: 550px) {

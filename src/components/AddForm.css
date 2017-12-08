@@ -13,3 +13,12 @@ form{
     display: block;
     width: 100%
 }
+.addInputName{
+    width: 60%
+}
+.addInputWeight{
+    width: 15%
+}
+.addFormSubmit{
+ margin: 3px;
+}
