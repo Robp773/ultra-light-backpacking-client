@@ -8,7 +8,10 @@ super(props){
     constructor(props);
 }
 
-render(){  
+render(){ 
+    console.log('ListHome rendered')
+    console.log(this.props.fullState)
+    
     let totalWeight = 0;
     let totalItems = 0;
     const hiking = this.props.hiking;
@@ -26,21 +29,19 @@ render(){
     listArray.map(function(arrayCategory){
 
         for(let i =0; i<arrayCategory.length; i++){
-              const numberItem = Number(arrayCategory[i].weight)        
-
-             return totalWeight += numberItem;
+              const numberItem = Number(arrayCategory[i].weight);     
+              totalWeight += numberItem;
            
         }
        return  totalItems += arrayCategory.length;
     })        
 
     totalWeight = totalWeight * .0625;
-
     const totals = {totalItems: totalItems, totalWeight: totalWeight, weightGoal: this.props.fullState.weightGoal} 
  
          return(
             <div className='homePage'>
-                <TotalBar totals={totals} totalWeight={totalWeight} />          
+                <TotalBar seeListsAgain={this.props.seeListsAgain} totals={totals} />
                 <Category title='Hiking' thisState={this.props.hiking}/>
                 <Category title='Clothing' thisState={this.props.clothing}/>
                 <Category title='Navigation' thisState={this.props.navigation}/>
@@ -57,7 +58,8 @@ render(){
 
 }
 const mapStateToProps = state => ({
-    fullState: state,    
+    fullState: state,
+    listName: state.listName,   
     hiking: state.hiking,
     clothing: state.clothing,
     navigation: state.navigation,
