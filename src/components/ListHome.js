@@ -7,11 +7,12 @@ export class ListHome extends React.Component{
 super(props){
     constructor(props);
 }
-
-render(){ 
-    console.log('ListHome rendered')
+componentDidUpdate(){
     console.log(this.props.fullState)
     
+}
+render(){ 
+ 
     let totalWeight = 0;
     let totalItems = 0;
     const hiking = this.props.hiking;
@@ -24,21 +25,26 @@ render(){
     const hygiene = this.props.hygiene;
     const firstAid = this.props.firstaid;
     const misc = this.props.misc;
+    // relevant parts of state needed for calculating the total list weights and item counts 
+    // (weightGoal and listname excluded)
     const listArray = [hiking, clothing, navigation, shelter, sleep, cooking, water, hygiene, firstAid, misc];
 
-    listArray.map(function(arrayCategory){
+    listArray.map((arrayCategory)=>{
 
         for(let i =0; i<arrayCategory.length; i++){
+        // add each objects weight property to the weight counter
               const numberItem = Number(arrayCategory[i].weight);     
-              totalWeight += numberItem;
-           
+              totalWeight += numberItem; 
         }
+        // add to the totalItems counter the length of the list
        return  totalItems += arrayCategory.length;
     })        
-
+    // change the ozs count to lbs
     totalWeight = totalWeight * .0625;
+    // totals object is passed into TotalBar component
     const totals = {totalItems: totalItems, totalWeight: totalWeight, weightGoal: this.props.fullState.weightGoal} 
- 
+//  each Category component represents one part of the state 
+// (ex - category with hiking title prop=== state.hiking array)
          return(
             <div className='homePage'>
                 <TotalBar seeListsAgain={this.props.seeListsAgain} totals={totals} />

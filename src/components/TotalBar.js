@@ -8,103 +8,141 @@ import {NotificationManager} from 'react-notifications';
 
 export class TotalBar extends React.Component{
 
- handleInputChange(value){
+// if the user changes the goal weight input, update the state
+handleInputChange(value){
  this.props.dispatch(updateGoal(value));
 }
+// allow the user to see the SelectLists component again
 handleListsClick(){
     this.props.seeListsAgain();
 }
+// send the current state of the client to the server in a put request
 handleSaveClick(){
-NotificationManager.success('List Saved')
-fetch(`${API_BASE_URL}/list-state/${this.props.listName}`, {
-method: 'put',
-headers: {'Content-Type': 'application/json'},
-body: JSON.stringify(this.props.fullState)
-})    
-
+    // display alert modal
+    NotificationManager.success('List Saved')
+    fetch(`${API_BASE_URL}/list-state/${this.props.listName}`, {
+    method: 'put',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(this.props.fullState)
+    })    
 }
 
-    render(){
+render(){
         let totalsObj = this.props.totals;  
-        let totalLbs, weightClass;
-        totalLbs= totalsObj.totalWeight.toFixed(2);
-        let weightGoal = this.props.fullState.weightGoal;
-        let feedback;
-        let unitOfMeasurement = 'lbs';
-        if(totalLbs - weightGoal < 1){
-           unitOfMeasurement = 'ozs'
-        }
-        // let weightClass;
-        // if(weightGoal <= 10){
-        //     weightClass = 'Ultralight'
-        // }
-        // else if(weightGoal <= 15){
-        //     weightClass = 
-        // }
+        let totalLbs, weightClass, feedback;
+        let weightGoal = this.props.fullState.weightGoal;        
+        let unitOfMeasurement = 'lbs';    
         
-        if(weightGoal === 0){
+        totalLbs= Number(totalsObj.totalWeight.toFixed(2));
+
+        let exceededNum = weightGoal - totalLbs
+
+        if(totalLbs - weightGoal < 1){
+            unitOfMeasurement = 'ozs'
+        }
+
+        // setting weightClass variable depending on the total pack weight
+        if(totalLbs === 0){
+            weightClass = 'Waiting for Items'
+        }
+        else if(totalLbs <= 5){
+            weightClass= "Super Ultralight"
+        }
+        else if(totalLbs <= 10){
+            weightClass = 'Ultralight'
+        }
+        else if(totalLbs <= 15){
+            weightClass = 'Lightweight'
+        }
+        else if(totalLbs <= 30){
+            weightClass = 'Standard Weight'
+        }
+        else if(totalLbs > 30){
+            weightClass = 'Heavy Weight'
+        }
+
+        // setting feedback variable to help direct user action
+        if(totalsObj.totalItems === 0){
+            feedback = "Please Add Some Items to the List"
+        }
+        else if(weightGoal === 0){
             feedback = 'Please Set a Weight Goal.'
         }
         else if(weightGoal === totalLbs){
             feedback = 'Goal Reached!'
         }
         else if(totalLbs < weightGoal){
-            feedback ="Goal Exceeded!";
+            feedback =`Goal Exceeded by ${exceededNum.toFixed(2)} lbs`;
         }
         else{
             feedback = `${(totalLbs - weightGoal).toFixed(2)} ${unitOfMeasurement} to drop to meet goal weight.`
         }
+
+    return(
     
-        return(
-           
         <div className='totalBarContainer'>
-        
+
             <div className='headerBtnContainer'> 
-                <header>Pack Light</header>
+                <header>Pack Light
+                    <img className='backpackingIcon' alt='Backpack icon' 
+                    src='..\images\man-2766763_1280 (1).png'/>
+                </header>
+            </div>
+
+            {/* fixed side bar */}
+            <div className='sideBar'> 
                 <button className='showListsBtn' onClick={()=>{this.handleListsClick()}}>
-                <i className="fa fa-list-alt" aria-hidden="true"></i>
+                    <i className="fa fa-list-alt" aria-hidden="true"></i>
+                </button>
+                <button className='saveBtn' onClick={()=>{this.handleSaveClick()}}>
+                    <i className="fa fa-floppy-o" aria-hidden="true"></i>
                 </button>
             </div>
+    
             <div className='listDataContainer'>
+                    {/* title */}
                     <h3>{this.props.listName}</h3>
 
-            <div className='totalContainer'> 
-            <div>   
-                <div className='divResult'>Total Weight:</div>
-                <div className='divTotal'>{totalLbs} lbs</div>
-            </div>
-             
-                <div> 
+                <div className='totalContainer'>
+
+                {/* total weight */}
+                <div className='totalDiv'>
+                    <div className='divResult'>Total Weight:</div>
+                    <div className='divTotal'>{totalLbs} lbs</div>
+                </div>
+
+                {/* total items */}
+                <div className='totalDiv'>
                     <div className='divResult'>Total Items: </div>
                     <div className='divTotal'>{totalsObj.totalItems}</div>
                 </div>
 
-                <div>  
+                {/* weight class */}
+                <div className='totalDiv'>
+                    <div className='divResult'>Current Class: </div>
+                    <div className='divTotal'>{weightClass}</div>
+                </div>
+
+                {/* weight goal */}
+                <div className='totalDiv'> 
                     <div className='divResult'>Weight Goal: </div>
                     <div className='divTotal'>
-                    <input ref={(input) => this.goalInput = input} type='number' className='setGoal' placeholder= {totalsObj.weightGoal}
+                    <input ref={(input) => this.goalInput = input} className='setGoal' placeholder= {totalsObj.weightGoal}
                     onChange={()=>{this.handleInputChange(Number(this.goalInput.value))}}/> lbs
                     </div>
                 </div>
-                <div>{feedback}</div>
-   
-                <button className='saveBtn' onClick={()=>{
-                    this.handleSaveClick()}}>
-                <i className="fa fa-floppy-o" aria-hidden="true"></i>
-</button>
-                </div>
-           </div>
-      
 
-        </div>
-    ) 
+                <div className='feedback'>{feedback}</div>
+            </div>
+        </div>         
+    </div>
+    )}
 }
-
-    }
 
 const mapStateToProps = state => ({
     fullState: state,
     listName: state.listName,
-    weightTotal: state.weightTotal
-    });        
+    // weightTotal: state.weightTotal
+    });    
+
 export default connect(mapStateToProps)(TotalBar)
