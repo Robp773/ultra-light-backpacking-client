@@ -1,15 +1,19 @@
 .category{
+    background: #4A4E4C;
     position: relative;
-    border: 1px solid black;
+    border-top: 1px solid #52DEE5;
+    border-bottom: 1px solid #52DEE5;
     font-size: 0;
-    margin-bottom: 3px;
+    color: white;
     text-align: center;
-    background-color: lightcoral;
 }
-
-.resultsParent{
+.fieldset{
+    padding: 5px;
+    border: 0;
+    margin: 0;
+}
+.resultsParent{    
     font-size: 15px;
-    background: grey;
     width: 100%;
 }
 
@@ -32,10 +36,8 @@ h3{
     display: inline-block;
 }
 
-div{
-    font-size: 15px;
-}
 .resultItemSection{
+    
     display: block;
     font-size: 0;
 
@@ -59,14 +61,22 @@ input{
 .addOrSub{
     font-size: 10px;
 }
+.addForm{
+        margin: auto;
+    }
+    .emptyListDiv{
+        background: #D3D0CB;
+    }
 
 @media screen and (min-width: 550px) {
-    .homePage{
-        font-size: 0;
-    }
+
     .category{
-        display: inline-block;
-        width: 49%;
+      margin: auto;
+      width: 50%;
     }
+    .name{
+        width: 45%;
+    }
+    
 }
     

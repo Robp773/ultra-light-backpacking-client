@@ -1,3 +1,11 @@
 .topCategory{
     position: relative;
 }
+.addForm{
+    margin: 5px;
+}
+@media screen and (min-width: 400px) {
+.addForm{
+margin: auto;
+}    
+}

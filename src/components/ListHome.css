@@ -1,4 +1,12 @@
 body{
-    background-color: darkslategrey;
     text-align: center;
+}
+
+@media screen and (min-width: 550px) {
+    .homePage{
+        background-image: url(/images/background-gradient.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 0;
+    }
 }

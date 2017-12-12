@@ -1,24 +1,27 @@
 
 
-form{
+.addForm{
+    color: black;
+    font-weight: bold;
+    background: #D3D0CB;
     width: fit-content;
-    margin-top:5px;
-    margin-bottom: 5px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 5px;   
     padding:10px;
-    background-color: beige;
 }
 .addInput{
     display: block;
     width: 100%
 }
 .addInputName{
-    width: 60%
+    width: 45%
 }
 .addInputWeight{
-    width: 15%
+    width: 10%
 }
 .addFormSubmit{
- margin: 3px;
+    display: inline-block;
+    margin-left: 5px;
+}
+legend{
+    margin: auto;
 }

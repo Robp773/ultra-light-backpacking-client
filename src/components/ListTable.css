@@ -1,8 +1,9 @@
 .scrollableParent{
-    background: lightgreen;
+    margin: 5px;
+    background: #D3D0CB;
     font-size: 0;
     text-align: center;
-    overflow: scroll;
+    overflow: auto;
     max-height: 200px;
 }
 .weightColumn, .nameColumn{
@@ -24,4 +25,15 @@ form{
 }
 .weightHeader{
 width: 15%;
+}
+fieldset{
+    border: 0;
+}
+.listItemForm{
+    background-image: url(/images/mountain-background.jpeg);
+    background-position: top;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-size: 18px;
+    color: black;
 }

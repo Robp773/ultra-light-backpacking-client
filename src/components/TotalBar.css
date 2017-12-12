@@ -1,21 +1,21 @@
 .totalBarContainer{
-    background: whitesmoke;
+  
+    background: #4A4E4C;
     font-size: 0;
     text-align: center;
-    margin-bottom: 3px;
 }
 
 header{
+    margin: auto;
+    color: white;
     display: inline-block;
-    font-size: 35px;    
+    font-size: 35px;
+    margin-bottom: 5px;
 }
 .setGoal{
     width: 20%;
 }
 .totalContainer{
-
-    margin-top: 5px;
-    margin-bottom: 5px;
     font-size: 15px;
     width: 75%;
     text-align: center;
@@ -28,47 +28,77 @@ header{
     display: inline-block;
 }
 
-.saveBtn{
-    position: fixed;
-    z-index: 1;
-    right: 0;
-    top: 115px;
-    margin: 3px;
-}
-.fa-floppy-o{
-font-size: 25px;
-}
-.headerBtnContainer{
-    display: inline-block;
-    width: 50%;
-}
 .listDataContainer{
-    background: lightseagreen;
+    background: #D3D0CB;
+    font-weight: bold;
 }
-.showListsBtn{
-    position: absolute;
+.sideBar{
+    z-index: 1;
+    position: fixed;
+    left: 85%;
+}
+.showListsBtn, .saveBtn{
     font-size: 25px;
-    top: 0;
-    right: 0;
-    margin: 3px;
+    margin: 2px;
+    display: block;
+    width: 100%;
+    align-content: center;
 }
 ::placeholder{
     color: black;
 }
+.feedback{
+    font-size: 15px;
+}
+
+/* desktops + tablets */
 @media screen and (min-width: 550px) {
 header{
+    width: fit-content;
     display: block;
 }
+.sideBar{
+    margin: 5px;
+    z-index: 1;
+    position: fixed;
+    left: 75%;
+    padding: 1px;
+}
+.divResult{
+    text-align: right;
+
+}
+.divTotal{
+    text-align: left;
+}
 .totalContainer{
+    width: 100%;
     text-align: center;
 }
 .divTotal, .divResult{
-    width: 20%;
+    width: 45%;
+    margin-right: 3px;
+    margin-left: 3px;
 }
-.saveBtn{
-    width: 25%;
-}
-}
-    
 
+.totalBarContainer{
+    width: 50%;
+    margin: auto;
+}
+.totalDiv{
+    display: block;
+}
+.setGoal{
+    width: 10%;
+}
+}
 
+/* iPhone 5 */
+@media screen and (max-width: 320px) {
+.listNamesParent{
+    width: 100%;
+}
+header{
+    font-size: 33px;
+}
+}
