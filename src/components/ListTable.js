@@ -2,13 +2,13 @@ import React from 'react';
 import './ListTable.css';
 export default class ListTable extends React.Component{
 
-render(){
+render(){    
         return (
-        <div className='scrollableParent'>
-            <form>
-              {this.props.displayItems}                                   
-            </form>
-        </div>
-    )
-}
+                <div className='scrollableParent'>
+                        <form className='listItemForm'>
+                            {this.props.displayItems}                                   
+                        </form>
+                </div>
+               )
+        }
 }

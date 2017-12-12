@@ -4,12 +4,12 @@ export default class CategoryTotal extends React.Component{
 
 render(){
     return(
-    <div className='topCategory'>
-    <h3>{this.props.title}</h3>
-    <div className='itemTotal'>{this.props.itemTotal} items</div> 
-    <div className='weightTotal'>{this.props.weightTotal.toFixed(2)} ounces</div> 
-    </div>
-    )
-}
+        <div className='topCategory'>
+            <h3>{this.props.title}</h3>
+            <div className='itemTotal'>{this.props.itemTotal} items</div> 
+            <div className='weightTotal'>{this.props.weightTotal.toFixed(2)} ounces</div> 
+        </div>
+        )
+    }
 }
 

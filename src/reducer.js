@@ -25,8 +25,10 @@ export const reducer =  (state = initialState, action) =>{
 	}
 
 	if(action.type === 'DELETE_ITEM'){
- 		state[action.title].splice([action.index], 1)
-			return Object.assign({}, state);
+		
+		state[action.title].splice([action.index], 1)
+
+		return Object.assign({}, state);
 	}
 
 	if(action.type === 'UPDATE_GOAL'){
