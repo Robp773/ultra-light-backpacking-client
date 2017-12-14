@@ -14,18 +14,12 @@ export class Category extends React.Component{
     selected: false,
     // if user clicks the '+' button to open AddForm component
     formOpen: false,
-
-    // change: false
-
     } 
 
 // if user enters a new value into an existing list item input
 handleChange(values, index){
     // values refers to the new value of the list item
     this.props.dispatch(updateItem(values, index, this.props.title.toLowerCase()))
-
-    // this.setState({change: !this.state.change})       
-
 };
 // if user clicks the delete button on a specific list item
 handleDeleteClick(index){
@@ -33,13 +27,8 @@ handleDeleteClick(index){
     NotificationManager.warning('Item Deleted');    
     this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index));
 
-    // this.setState({change: !this.state.change});    
 };
 
-componentDidUpdate(){
-    console.log(this.props.thisState)
-    
-}
 render(){
     
     // counter for this specific category's weight total;
@@ -66,6 +55,8 @@ render(){
     else{
 
         displayItems = this.props.thisState.map((item, index)=>{
+            console.log('mapping');
+            console.log(item.name);
         // for CategoryTotal component
         weightTotal += item.weight;
         // for creating a unique ref for each input depending on it's index
