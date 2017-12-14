@@ -13,7 +13,7 @@ const initialState =
     firstaid: [],
     misc: []
 } 
-
+// check immutability
 export const reducer =  (state = initialState, action) =>{
 
 	if(action.type === 'ADD_ITEM'){
@@ -26,7 +26,9 @@ export const reducer =  (state = initialState, action) =>{
 
 	if(action.type === 'DELETE_ITEM'){
 		
-		state[action.title].splice([action.index], 1)
+		state[action.title] = state[action.title].filter((item, index)=>{
+			return action.index !== index;
+		});
 
 		return Object.assign({}, state);
 	}
