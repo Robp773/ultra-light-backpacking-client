@@ -74,7 +74,10 @@ render(){
                 onClick={(e)=>{e.stopPropagation()}}
                 defaultValue={item.weight} className='indivResult weight'/>
 
-            <button className='deleteBtn' onClick={(e)=>{e.stopPropagation(); e.preventDefault()}}>
+            <button className='deleteBtn' onClick={(e)=>{
+            e.stopPropagation(); 
+            e.preventDefault()
+            this.handleDeleteClick(index)}}>
                 <i onClick={()=>this.handleDeleteClick(index)} className="fa fa-trash" aria-hidden="true"></i>
             </button>
 
