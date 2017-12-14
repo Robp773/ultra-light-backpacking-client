@@ -2,7 +2,6 @@
 
 # Live Demo
 
-
 # Introduction
 
 Pack Light is an app that was designed to simplify the process of cutting down a backpacker's baseweight and getting a sense of what weight improvements can be made to your packing list. Reaching 'ultra light' status with your backpack's weight can be a tough milestone to reach and many times involves writing out a long list of items, weights, and categories to get a sense of what you can and can't afford to take. This app enables the user to keep track of this long list, edit it's contents, and save them for later use. 
