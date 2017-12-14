@@ -10,6 +10,7 @@ export class Main extends React.Component{
     constructor(props){
          super(props);
         this.state = {
+            // landingPage: true,
             // tracks if user has selected a list
             selectionMade: false,
             // to open delete confirm modal
@@ -106,8 +107,17 @@ export class Main extends React.Component{
 
     
 
-    render(){
+    render(){    
+    // let landingPage;
     let deleteConfirmModal;
+    // if(this.state.landingPage){
+    //     return (
+    //         <div className='modalBG'>
+    //         <div className='modal'>Landing Pages Text</div>
+    //        </div>
+    //     )
+    // }
+
     if(this.state.deleteConfirm){
         deleteConfirmModal = <div className='deleteModal'>
                                 <div>Confirm Deletion</div>
@@ -126,11 +136,15 @@ export class Main extends React.Component{
         }
 // otherwise display the list of lists
             else {
-                    return (
+                    return (                            
+                        <div>
+                        {/* {landingPage} */}
+
                         <div className='containerDiv'>
                             <SelectList newListInput={this.state.newListInput} listNames={this.state.listNames}/>
                             {deleteConfirmModal}
                             <NotificationContainer/>
+                        </div>
                         </div>
                     )
                  }
