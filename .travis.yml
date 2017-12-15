@@ -14,8 +14,7 @@ before_deploy:
 
 deploy:
   provider: script
-  script: netlify deploy -s $cd6cf0aa-4127-4ec0-bedb-6a8acc4f2a7a
- -t $9a549e7422bf69d7b9e030f93b2f69069a7212d5ea63727904224ea498b19778 -p ./build
+  script: netlify deploy -s $cd6cf0aa-4127-4ec0-bedb-6a8acc4f2a7a -t $9a549e7422bf69d7b9e030f93b2f69069a7212d5ea63727904224ea498b19778 -p ./build
   skip_cleanup: true
   on:
     branch: master
