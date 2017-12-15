@@ -1,7 +1,7 @@
 .containerDiv{
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url(/images/rocks-trees-hiking-trail.jpg);
+    background-image: url('/images/pexels-photo-167698.jpeg');
     height: 1000px;
     background-size: cover;
     margin: auto;
@@ -65,8 +65,8 @@ th{
     text-align: center;
 }
 .createListBtn{
-    display: block;
-    margin: auto;
+    margin-left: 3px;
+    font-size: 15px;
 }
 .createListForm{
     background: #D3D0CB;

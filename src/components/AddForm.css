@@ -19,8 +19,9 @@
     width: 10%
 }
 .addFormSubmit{
+    font-size: 15px;
     display: inline-block;
-    margin-left: 5px;
+    margin-left: 1px;
 }
 legend{
     margin: auto;
