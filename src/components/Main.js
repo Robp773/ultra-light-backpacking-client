@@ -5,6 +5,7 @@ import {API_BASE_URL} from '../config';
 import {connect} from 'react-redux';
 import {setListState} from '../actions.js';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
+import LandingModal from './LandingModal';
 
 export class Main extends React.Component{
     constructor(props){
@@ -14,10 +15,13 @@ export class Main extends React.Component{
             // tracks if user has selected a list
             selectionMade: false,
             // to open delete confirm modal
-            deleteConfirm: false
+            deleteConfirm: false,
+            landingPage: true
         }
         this.handleChoice = this.handleChoice.bind(this);
         this.seeListsAgain = this.seeListsAgain.bind(this);
+        this.onStart = this.onStart.bind(this);
+        
     }
 // set the initial state of the client by retrieving their selected list
     handleChoice(listName){
@@ -105,18 +109,18 @@ export class Main extends React.Component{
         this.componentWillMount()
     }
 
-    
+    onStart(){
+        console.log('on start')
+        this.setState({landingPage: false})
+    }
 
     render(){    
-    // let landingPage;
+    let landingModal;
+    if(this.state.landingPage){
+        landingModal = <LandingModal onStart={()=>this.onStart()}/>
+    }
     let deleteConfirmModal;
-    // if(this.state.landingPage){
-    //     return (
-    //         <div className='modalBG'>
-    //         <div className='modal'>Landing Pages Text</div>
-    //        </div>
-    //     )
-    // }
+
 
     if(this.state.deleteConfirm){
         deleteConfirmModal = <div className='deleteModal'>
@@ -138,9 +142,8 @@ export class Main extends React.Component{
             else {
                     return (                            
                         <div>
-                        {/* {landingPage} */}
-
                         <div className='containerDiv'>
+                            {landingModal}
                             <SelectList newListInput={this.state.newListInput} listNames={this.state.listNames}/>
                             {deleteConfirmModal}
                             <NotificationContainer/>
