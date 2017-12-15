@@ -21,7 +21,7 @@ export default class Category extends React.Component{
 
 render(){  
     let weightTotal = 0;
-    let buttonSymbol, addForm, displayItems;
+    let buttonSymbol, addForm;
     for(let i=0; i<this.props.thisState.length; i++){
         weightTotal += this.props.thisState[i].weight;
     }
