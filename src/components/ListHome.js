@@ -7,12 +7,10 @@ export class ListHome extends React.Component{
 super(props){
     constructor(props);
 }
-componentDidUpdate(){
-    console.log(this.props.fullState)
-    
-}
+
 render(){ 
- 
+     console.log(this.props.fullState)
+
     let totalWeight = 0;
     let totalItems = 0;
     const hiking = this.props.hiking;
@@ -27,7 +25,7 @@ render(){
     const misc = this.props.misc;
     // relevant parts of state needed for calculating the total list weights and item counts 
     // (weightGoal and listname excluded)
-    const listArray = [hiking, clothing, navigation, shelter, sleep, cooking, water, hygiene, firstAid, misc];
+    let listArray = [hiking, clothing, navigation, shelter, sleep, cooking, water, hygiene, firstAid, misc];
 
     listArray.map((arrayCategory)=>{
 
@@ -48,16 +46,16 @@ render(){
          return(
             <div className='homePage'>
                 <TotalBar seeListsAgain={this.props.seeListsAgain} totals={totals} />
-                <Category title='Hiking' thisState={this.props.hiking}/>
-                <Category title='Clothing' thisState={this.props.clothing}/>
-                <Category title='Navigation' thisState={this.props.navigation}/>
-                <Category title='Shelter' thisState={this.props.shelter}/>
-                <Category title='Sleep' thisState={this.props.sleep}/>
-                <Category title='Cooking' thisState={this.props.cooking}/>
-                <Category title='Water' thisState={this.props.water}/>
-                <Category title='Hygiene' thisState={this.props.hygiene}/>
-                <Category title='First Aid' thisState={this.props.firstaid}/>
-                <Category title='Misc' thisState={this.props.misc}/>
+                <Category title='Hiking' imgSrc={'images/category-icons/010-trekking.svg'} thisState={this.props.hiking}/>
+                <Category title='Clothing' imgSrc={'images/category-icons/009-garment.svg'} thisState={this.props.clothing}/>
+                <Category title='Navigation' imgSrc={'images/category-icons/008-compass.svg'} thisState={this.props.navigation}/>
+                <Category title='Shelter' imgSrc={'images/category-icons/007-camping.svg'} thisState={this.props.shelter}/>
+                <Category title='Sleep' imgSrc={'images/category-icons/006-sleep.svg'} thisState={this.props.sleep}/>
+                <Category title='Cooking' imgSrc={'images/category-icons/005-chocolate.svg'} thisState={this.props.cooking}/>
+                <Category title='Water' imgSrc={'images/category-icons/004-water-drop.svg'} thisState={this.props.water}/>
+                <Category title='Hygiene' imgSrc={'images/category-icons/003-soap.svg'} thisState={this.props.hygiene}/>
+                <Category title='First Aid' imgSrc={'images/category-icons/002-first-aid-kit.svg'} thisState={this.props.firstaid}/>
+                <Category title='Misc' imgSrc={'images/category-icons/001-lagoon.svg'} thisState={this.props.misc}/>
             </div>
     )
 }
