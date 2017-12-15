@@ -8,7 +8,7 @@ export default class SelectList extends React.Component{
             <div>
                 <header>Pack Light
                     {/* 'photo' in image reference triggering redudant alt warning */}
-                    <img className='backpackingIcon' alt='Backpacker Icon - https://pixabay.com/photo-2766763/' src='..\images\man-2766763_1280 (1).png'/>
+                    <img className='backpackingIcon' alt='Backpacker Icon' src='..\images\man-2766763_1280 (1).png'/>
                 </header>
                 <div className='listBody'>
                     <div className='listNamesParent' >             
