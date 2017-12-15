@@ -14,7 +14,7 @@ render(){
         
       
             
-        <img className='categoryIcon' src={this.props.imgSrc}/>
+        <img className='categoryIcon' alt='Category Icon' src={this.props.imgSrc}/>
         </div>
 </div>
         )
