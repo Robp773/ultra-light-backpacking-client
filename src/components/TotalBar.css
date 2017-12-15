@@ -6,11 +6,12 @@
 }
 
 header{
-    margin: auto;
+    width: 90%;
     color: white;
     display: inline-block;
     font-size: 35px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
+    margin-top: 3px;
 }
 .setGoal{
     width: 20%;
@@ -29,6 +30,7 @@ header{
 }
 
 .listDataContainer{
+    padding-bottom: 5px;
     background: #D3D0CB;
     font-weight: bold;
 }
@@ -48,15 +50,23 @@ header{
     color: black;
 }
 .feedback{
+    padding: 5px;
+    border-top: 1px solid black;
     font-size: 15px;
+    border-bottom: 1px solid black;
+    margin-top: 5px;
 }
 
 /* desktops + tablets */
 @media screen and (min-width: 550px) {
-header{
-    width: fit-content;
-    display: block;
+.feedback{
+    border: 0;
 }
+header{
+    width: 50%;
+}
+
+
 .sideBar{
     margin: 5px;
     z-index: 1;
