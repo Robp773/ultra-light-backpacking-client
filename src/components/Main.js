@@ -11,11 +11,11 @@ export class Main extends React.Component{
     constructor(props){
          super(props);
         this.state = {
-            // landingPage: true,
             // tracks if user has selected a list
             selectionMade: false,
             // to open delete confirm modal
             deleteConfirm: false,
+            // to determine if landing page is visible
             landingPage: true
         }
         this.handleChoice = this.handleChoice.bind(this);
