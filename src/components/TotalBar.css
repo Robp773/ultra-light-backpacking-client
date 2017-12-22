@@ -25,10 +25,18 @@ header{
 }
 
 .divTotal, .divResult{
+    padding-left: 5px;
+    padding-right: 5px;
     width: 45%;
     display: inline-block;
 }
+.divResult{
+    text-align: right;
 
+}
+.divTotal{
+    text-align: left;
+}
 .listDataContainer{
     padding-bottom: 5px;
     background: #D3D0CB;
@@ -49,19 +57,17 @@ header{
 ::placeholder{
     color: black;
 }
+
 .feedback{
+    color: black;
     padding: 5px;
-    border-top: 1px solid black;
     font-size: 15px;
-    border-bottom: 1px solid black;
     margin-top: 5px;
 }
 
 /* desktops + tablets */
 @media screen and (min-width: 550px) {
-.feedback{
-    border: 0;
-}
+
 header{
     width: 50%;
 }
@@ -74,13 +80,7 @@ header{
     left: 75%;
     padding: 1px;
 }
-.divResult{
-    text-align: right;
 
-}
-.divTotal{
-    text-align: left;
-}
 .totalContainer{
     width: 100%;
     text-align: center;
