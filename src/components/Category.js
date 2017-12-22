@@ -4,7 +4,6 @@ import AddForm from './AddForm';
 import ListTable from './ListTable';
 import CategoryTotal from './CategoryTotal';
 
-
 export default class Category extends React.Component{
 
     state = {
@@ -18,14 +17,12 @@ export default class Category extends React.Component{
 
 // if user enters a new value into an existing list item input
 
-
 render(){  
     let weightTotal = 0;
     let buttonSymbol, addForm;
     for(let i=0; i<this.props.thisState.length; i++){
         weightTotal += this.props.thisState[i].weight;
     }
-    console.log(weightTotal)
     // counter for this specific category's weight total;
   
 // if the form is open change the  form open button symbol from '+' to '-'
@@ -54,7 +51,7 @@ if(this.state.selected === true){
                 {loadedCategory}
                 <button className='addBtn' onClick={(e)=> {e.stopPropagation(); this.setState({formOpen: !this.state.formOpen})} } >{buttonSymbol}</button>
                 {addForm} 
-                <ListTable className='ListTable' title={this.props.title} thisState={this.props.thisState}/>
+                <ListTable title={this.props.title} thisState={this.props.thisState}/>
             </section>
             )
  }
