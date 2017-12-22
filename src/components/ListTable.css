@@ -1,3 +1,8 @@
+@keyframes slideDown {
+    0%   {max-height: 0px;}
+    100% {max-height: 200px;}
+}
+
 .scrollableParent{
     margin: 5px;
     background: #D3D0CB;
@@ -5,6 +10,7 @@
     text-align: center;
     overflow: auto;
     max-height: 200px;
+    animation: .17s ease-in 1 slideDown;
 }
 .weightColumn, .nameColumn{
     display: inline-block;
