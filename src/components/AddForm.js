@@ -19,8 +19,7 @@ export class AddForm extends React.Component{
             this.inputName.value = '';
             this.inputWeight.value='';
         }}>
-            <legend>Add Item</legend>
-            <input ref= {(input)=>{this.inputName = input}} className='addInputName' name='name' type='text' placeholder='Item Name'/>
+            <input ref= {(input)=>{this.inputName = input}} className='addInputName' name='name' type='text' placeholder='New Item Name'/>
             <input ref= {(input)=>{this.inputWeight = input}} className='addInputWeight' name='weight' type='number' placeholder='ozs'/>
             <button className='addFormSubmit' type='submit' onClick={(e)=>{e.stopPropagation()}}>Submit</button>
         </form>
