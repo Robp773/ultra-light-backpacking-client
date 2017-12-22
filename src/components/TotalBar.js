@@ -5,6 +5,7 @@ import {updateGoal} from '../actions';
 import {API_BASE_URL} from '../config';
 import 'react-notifications/lib/notifications.css';
 import {NotificationManager} from 'react-notifications';
+import Feedback from './Feedback.js'
 
 export class TotalBar extends React.Component{
 
@@ -26,6 +27,7 @@ handleSaveClick(){
     body: JSON.stringify(this.props.fullState)
     })    
 }
+
 
 render(){
         let totalsObj = this.props.totals;  
@@ -132,7 +134,7 @@ render(){
                     </div>
                 </div>
 
-                <div className='feedback'>{feedback}</div>
+                <Feedback feedback={feedback}/>
             </div>
         </div>         
     </div>
@@ -142,7 +144,6 @@ render(){
 const mapStateToProps = state => ({
     fullState: state,
     listName: state.listName,
-    // weightTotal: state.weightTotal
     });    
 
 export default connect(mapStateToProps)(TotalBar)
