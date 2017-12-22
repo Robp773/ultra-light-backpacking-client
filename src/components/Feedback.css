@@ -1,0 +1,12 @@
+
+.flashDiv{
+    /* border-bottom: 5px solid black;
+    border-top: 5px solid black; */
+}
+
+.underliner{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-top: 0px solid red;
+    width: 0%;
+}
