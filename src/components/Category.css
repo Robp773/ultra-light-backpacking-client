@@ -7,6 +7,11 @@
     color: white;
     text-align: center;
 }
+
+.category:active {
+    color: #52DEE5;
+}
+
 .fieldset{
     padding: 5px;
     border: 0;
