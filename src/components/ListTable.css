@@ -8,7 +8,7 @@
     background: #D3D0CB;
     font-size: 0;
     text-align: center;
-    overflow: auto;
+    overflow-y: scroll;
     max-height: 200px;
     animation: .17s ease-in 1 slideDown;
 }

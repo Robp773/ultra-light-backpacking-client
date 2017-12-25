@@ -2,10 +2,15 @@ body{
     text-align: center;
 }
 
+.homepage {
+  overflow-y: scroll;
+}
+
 @media screen and (min-width: 550px) {
     .homePage{
         background-image: url(/images/background-gradient.jpg);
-        background-size: 1500px;
+        background-size: cover;
+        background-repeat: no-repeat;
         font-size: 0;
     }
 }
