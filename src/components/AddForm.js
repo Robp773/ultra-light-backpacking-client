@@ -6,7 +6,7 @@ export class AddForm extends React.Component{
 
     render(){
     return(
-        <form className='addForm' onClick={(e)=>{e.stopPropagation()}} 
+        <form className='addForm' onCliczk={(e)=>{e.stopPropagation()}} 
         onSubmit={(e)=>{
             e.preventDefault();        
             const name = this.inputName.value

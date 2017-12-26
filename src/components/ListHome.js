@@ -46,7 +46,7 @@ export class ListHome extends React.Component{
       let renderCategories = categoryKeys.map((category) => {
         let categoryTitle = CATEGORIES[category];
         let categoryImage = IMAGES[category];
-        return <Category
+        return <Category 
                 key={categoryTitle}
                 title={categoryTitle}
                 imgSrc={`images/category-icons/${categoryImage}`}

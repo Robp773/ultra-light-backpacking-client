@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {updateItem, deleteItem} from '../actions';
 import {NotificationManager} from 'react-notifications';
 
+
 export class ListTable extends React.Component{
         constructor(props){
                 super(props);
@@ -28,7 +29,8 @@ handleDeleteClick(index){
         NotificationManager.warning('Item Deleted');    
         this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index))};
 
-render(){   
+render(){  
+         
         let displayItems;
        
         displayItems = this.props.thisState.map((item, index)=>{
@@ -58,15 +60,16 @@ render(){
         </fieldset>
        )
     })  
+
     if(this.props.thisState.length === 0){
         displayItems = <div className='emptyListDiv'><div>This list needs some items...</div></div>
   }  
         return (
-                <div className='scrollableParent'>
-                        <form className='listItemForm'>
-                            {displayItems}
-                        </form>
-                </div>
+                        <div className='scrollableParent'>
+                                <form className='listItemForm'>
+                                        {displayItems}
+                                </form>
+                        </div>
                )
         }
 }

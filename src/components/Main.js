@@ -81,7 +81,7 @@ export class Main extends React.Component{
 
         fetch(`${API_BASE_URL}/list-state/name-list`)
         .then((res)=>{           
-            res.json()
+         res.json()
             .then((resJSON)=>{
     //  for each list name, create a section displaying the name and total weight/item number
                  const listNameDivs = resJSON.map((list, index)=>{
