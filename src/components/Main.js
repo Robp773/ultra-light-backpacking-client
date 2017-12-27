@@ -83,7 +83,7 @@ export class Main extends React.Component{
         .then((res)=>{           
          res.json()
             .then((resJSON)=>{
-    //  for each list name, create a section displaying the name and total weight/item number
+                 //  for each list name, create a section displaying the name and total weight/item number
                  const listNameDivs = resJSON.map((list, index)=>{
                     return (
                             <div className='overviewParent' key={index} onClick={()=>{this.handleChoice(list.listName)}}>
@@ -129,7 +129,7 @@ export class Main extends React.Component{
                                 <button onClick={()=>{this.setState({deleteConfirm: false})}}>Cancel</button>
                             </div>
     }
-//  if user has made a choice to select a specific list, display that list
+    //  if user has made a choice to select a specific list, display that list
     if(this.state.selectionMade){
         return (
                 <div>
@@ -138,20 +138,20 @@ export class Main extends React.Component{
                 </div>
                 )
         }
-// otherwise display the list of lists
-            else {
-                    return (                            
-                        <div>
-                        <div className='containerDiv'>
-                            {landingModal}
-                            <SelectList newListInput={this.state.newListInput} listNames={this.state.listNames}/>
-                            {deleteConfirmModal}
-                            <NotificationContainer/>
-                        </div>
-                        </div>
-                    )
-                 }
-            } 
+        // otherwise display the list of lists
+        else {
+                return (                            
+                    <div>
+                    <div className='containerDiv'>
+                        {landingModal}
+                        <SelectList newListInput={this.state.newListInput} listNames={this.state.listNames}/>
+                        {deleteConfirmModal}
+                        <NotificationContainer/>
+                    </div>
+                    </div>
+                )
+            }
+        } 
     }
 
 export default connect()(Main);
