@@ -37,7 +37,7 @@ React styled components - https://www.styled-components.com/
 
 [![https://gyazo.com/3a099ea7d6badb5237e1b67f83108bed](https://i.gyazo.com/3a099ea7d6badb5237e1b67f83108bed.png)](https://gyazo.com/3a099ea7d6badb5237e1b67f83108bed)
 
-![mobile screenshot](/images/mobileScreenshot.png)
+![mobile screenshot](images/mobileScreenshot.png)
 
 ## Attributions
 
