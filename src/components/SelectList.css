@@ -1,108 +1,103 @@
-.containerDiv{
-    background-repeat: no-repeat;
-    background-position: center;
-    background-image: url('/images/Webp.net-compress-image.jpg');
-    height: 1000px;
-    background-size: cover;
-    margin: auto;
-    text-align: center
+.containerDiv {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('/images/Webp.net-compress-image.jpg');
+	height: 1000px;
+	background-size: cover;
+	margin: auto;
+	text-align: center
 }
-header{
-    background: rgba(74, 78, 76, 1)
+header {
+	background: rgba(74, 78, 76, 1)
 }
-
-.backpackingIcon{
-    margin: 5px;
-    height: 55px;
-    display: inline-block;
-    vertical-align: middle;
+.backpackingIcon {
+	margin: 5px;
+	height: 55px;
+	display: inline-block;
+	vertical-align: middle;
 }
-.listBody{
-margin: auto;      
+.listBody {
+	margin: auto;
 }
-.listNamesParent{
-    background: rgba(74, 78, 76, .9);
-    margin: auto;
-    width: 90%;
+.listNamesParent {
+	background: rgba(74, 78, 76, .9);
+	margin: auto;
+	width: 90%;
 }
-
-.overview{
- width: 20%;
-    display: inline-block;
+.overview {
+	width: 20%;
+	display: inline-block;
 }
-.overviewName{
-    display: inline-block;
-    width: 40%}
-.overviewParent:hover{
-    border: 2px solid #52DEE5;
+.overviewName {
+	display: inline-block;
+	width: 40%
 }
-.overviewParent{
-    margin: auto;
-    background: #D3D0CB;
-    font-size: 15px;
-    border: 1px solid black;
+.overviewParent:hover {
+	border: 2px solid #52DEE5;
 }
-.newListInput{
-    width: 75%;
+.overviewParent {
+	margin: auto;
+	background: #D3D0CB;
+	font-size: 15px;
+	border: 1px solid black;
 }
-.deleteBtn{
-    
-    text-align: right;
+.newListInput {
+	width: 75%;
 }
-.namesListTable{
-    align: center;
+.deleteBtn {
+	text-align: right;
 }
-td{
-    text-align: center;
-    margin: auto;
+.namesListTable {
+	align: center;
 }
-
-tr{
-    text-align: center;
+td {
+	text-align: center;
+	margin: auto;
 }
-
-th{
-    text-align: center;
+tr {
+	text-align: center;
 }
-.createListBtn{
-    margin-left: 3px;
-    font-size: 15px;
+th {
+	text-align: center;
 }
-.createListForm{
-    background: #D3D0CB;
-    padding: 5px;
-    width: 85%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 5px;
-    margin-top: 5px;
+.createListBtn {
+	margin-left: 3px;
+	font-size: 15px;
 }
-.selectH3{
-    color: white;
+.createListForm {
+	background: #D3D0CB;
+	padding: 5px;
+	width: 85%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 5px;
+	margin-top: 5px;
 }
-.deleteModal{
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    padding: 5px;
-    margin-top: 5px;
-    background: #D3D0CB;
+.selectH3 {
+	color: white;
+}
+.deleteModal {
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+	padding: 5px;
+	margin-top: 5px;
+	background: #D3D0CB;
 }
 @media screen and (min-width: 550px) {
-    .listNamesParent{
-        padding: 15px;
-        width: 50%;
-    }
-    .overviewParent{
-        width: 85%;
-    }
-    .createListForm{
-        width: 50%;
-    }
-    header{
-        width: 50%;
-        padding-left: 15px;
-        padding-right: 15px;
-    }
-
-}    
+	.listNamesParent {
+		padding: 15px;
+		width: 50%;
+	}
+	.overviewParent {
+		width: 85%;
+	}
+	.createListForm {
+		width: 50%;
+	}
+	header {
+		width: 50%;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}

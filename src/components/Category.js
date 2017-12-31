@@ -16,16 +16,14 @@ export default class Category extends React.Component{
     } 
 
 // if user enters a new value into an existing list item input
-
 render(){  
     let weightTotal = 0;
     let buttonSymbol, addForm;
     for(let i=0; i<this.props.thisState.length; i++){
         weightTotal += this.props.thisState[i].weight;
     }
-    // counter for this specific category's weight total;
-  
-// if the form is open change the  form open button symbol from '+' to '-'
+
+    // if the form is open change the  form open button symbol from '+' to '-'
     if(this.state.formOpen === true){
      buttonSymbol = <i className="fa fa-minus  addOrSub" aria-hidden="true"></i>;
     //  initialize an AddForm component with the Category's title
@@ -36,26 +34,21 @@ render(){
         buttonSymbol = <i className="fa fa-plus addOrSub" aria-hidden="true"></i>
         
     }  
-
-
-//   CategoryTotal component with all needed props - used in both conditions
+    //   CategoryTotal component with all needed props - used in both conditions
     const loadedCategory = 
     <CategoryTotal title= {this.props.title} imgSrc={this.props.imgSrc} itemTotal={this.props.thisState.length} weightTotal={weightTotal} />
     
-    // if this category is opened display the CategoryTotal component
-    // with the addBtn to let the user open the form
-    // and display all list items in the format created above
-if(this.state.selected === true){
-    return (
-            <section className='category' onClick={()=> {this.setState({selected: !this.state.selected})}}>
-                {loadedCategory}
-                <button className='addBtn' onClick={(e)=> {e.stopPropagation(); this.setState({formOpen: !this.state.formOpen})} } >{buttonSymbol}</button>
-                {addForm} 
-                <ListTable title={this.props.title} thisState={this.props.thisState}/>
-            </section>
-            )
+    if(this.state.selected === true){
+        return (
+                <section className='category' onClick={()=> {this.setState({selected: !this.state.selected})}}>
+                    {loadedCategory}
+                    <button className='addBtn' onClick={(e)=> {e.stopPropagation(); this.setState({formOpen: !this.state.formOpen})} } >{buttonSymbol}</button>
+                    {addForm} 
+                    <ListTable title={this.props.title} thisState={this.props.thisState}/>
+                </section>
+                )
  }
-//  if this category has not been selected, only display the category total
+    //  if this category has not been selected, only display the category total
     else {
         return (
                 <section className='category' onClick={()=>{this.setState({selected: !this.state.selected})}}>

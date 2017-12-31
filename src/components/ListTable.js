@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import {updateItem, deleteItem} from '../actions';
 import {NotificationManager} from 'react-notifications';
 
-
 export class ListTable extends React.Component{
         constructor(props){
                 super(props);
@@ -12,12 +11,6 @@ export class ListTable extends React.Component{
                         change: false
                 }
         }
-
-            // if there is nothing in a category's array, display this message
-
-    // for each object in this category's array, create a single fieldset
-    // including one input for the name property and one for the weight
-    // delete button for deleting this object from the state
 
 handleChange(values, index){     
         // values refers to the new value of the list item
@@ -30,11 +23,8 @@ handleDeleteClick(index){
         this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index))};
 
 render(){  
-         
         let displayItems;
-       
         displayItems = this.props.thisState.map((item, index)=>{
-      
         // for CategoryTotal component
         // for creating a unique ref for each input depending on it's index
         const name = 'name'+ index;
@@ -65,11 +55,11 @@ render(){
         displayItems = <div className='emptyListDiv'><div>This list needs some items...</div></div>
   }  
         return (
-                        <div className='scrollableParent'>
-                                <form className='listItemForm'>
-                                        {displayItems}
-                                </form>
-                        </div>
+                <div className='scrollableParent'>
+                        <form className='listItemForm'>
+                                {displayItems}
+                        </form>
+                </div>
                )
         }
 }

@@ -2,10 +2,7 @@ import React from 'react';
 import './Feedback.css';
 import styled, { keyframes } from 'styled-components';
 
-
-
 export default class Feedback extends React.Component{
-
 
 render(){
     const flashChange = keyframes`
@@ -22,19 +19,16 @@ render(){
     }
   `;
   const expandUnderliners = keyframes`
-  0% {
-      border-top: 2px solid black;
-      width: 0%;
-50%  { 
-    border-top: 2px solid #52DEE5;
-    
-100% {
-
-    border-top: 2px solid black;
-    
-    width: 100%;
-}
-`;
+         0% {
+            border-top: 2px solid black;
+            width: 0%;
+        50% { 
+            border-top: 2px solid #52DEE5;
+       100% {
+            border-top: 2px solid black;
+            width: 100%;
+            }
+            `;
   
   const FlashDiv = styled.div`
     width: fit-content;
@@ -51,12 +45,11 @@ render(){
   width: 100%;
   animation: 1s ${expandUnderliners};`
 
-return( <FlashDiv className='flashDiv'>
+return(<FlashDiv className='flashDiv'>
             <Underliner></Underliner>
                 {this.props.feedback}
             <Underliner></Underliner>
-        </FlashDiv>)
-
+       </FlashDiv>)
     }
 }
     

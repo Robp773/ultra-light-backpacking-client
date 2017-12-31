@@ -1,114 +1,155 @@
-.totalBarContainer{
-  
-    background: #4A4E4C;
-    font-size: 0;
-    text-align: center;
+.topCategory {
+	display: inline-block;
+	position: relative;
 }
 
-header{
-    width: 90%;
-    color: white;
-    display: inline-block;
-    font-size: 35px;
-    margin-bottom: 3px;
-    margin-top: 3px;
-}
-.setGoal{
-    width: 20%;
-}
-.totalContainer{
-    font-size: 15px;
-    width: 75%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+.addForm {
+	margin: 5px;
 }
 
-.divTotal, .divResult{
-    padding-left: 5px;
-    padding-right: 5px;
-    width: 45%;
-    display: inline-block;
-}
-.divResult{
-    text-align: right;
-
-}
-.divTotal{
-    text-align: left;
-}
-.listDataContainer{
-    padding-bottom: 5px;
-    background: #D3D0CB;
-    font-weight: bold;
-}
-.sideBar{
-    z-index: 1;
-    position: fixed;
-    left: 85%;
-}
-.showListsBtn, .saveBtn{
-    font-size: 25px;
-    margin: 2px;
-    display: block;
-    width: 100%;
-    align-content: center;
-}
-::placeholder{
-    color: black;
+.categoryIcon {
+	width: 50px;
+	float: right;
+	margin: 5px;
 }
 
-.feedback{
-    color: black;
-    padding: 5px;
-    font-size: 15px;
-    margin-top: 5px;
+.totalBarContainer {
+	background: #4A4E4C;
+	font-size: 0;
+	text-align: center;
+}
+
+header {
+	width: 90%;
+	color: white;
+	display: inline-block;
+	font-size: 35px;
+	margin-bottom: 3px;
+	margin-top: 3px;
+}
+
+.setGoal {
+	width: 20%;
+}
+
+.totalContainer {
+	font-size: 15px;
+	width: 75%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.divTotal, .divResult {
+	padding-left: 5px;
+	padding-right: 5px;
+	width: 45%;
+	display: inline-block;
+}
+
+.divResult {
+	text-align: right;
+}
+
+.divTotal {
+	text-align: left;
+}
+
+.listDataContainer {
+	padding-bottom: 5px;
+	background: #D3D0CB;
+	font-weight: bold;
+}
+
+.sideBar {
+	z-index: 1;
+	position: fixed;
+	left: 85%;
+}
+
+.showListsBtn, .saveBtn {
+	font-size: 25px;
+	margin: 2px;
+	display: block;
+	width: 100%;
+	align-content: center;
+}
+
+::placeholder {
+	color: black;
+}
+
+.feedback {
+	color: black;
+	padding: 5px;
+	font-size: 15px;
+	margin-top: 5px;
 }
 
 /* desktops + tablets */
+
 @media screen and (min-width: 550px) {
-
-header{
-    width: 50%;
-}
-
-
-.sideBar{
-    margin: 5px;
-    z-index: 1;
-    position: fixed;
-    left: 75%;
-    padding: 1px;
-}
-
-.totalContainer{
-    width: 100%;
-    text-align: center;
-}
-.divTotal, .divResult{
-    width: 45%;
-    margin-right: 3px;
-    margin-left: 3px;
-}
-
-.totalBarContainer{
-    width: 50%;
-    margin: auto;
-}
-.totalDiv{
-    display: block;
-}
-.setGoal{
-    width: 10%;
-}
+	header {
+		width: 50%;
+	}
+	.sideBar {
+		margin: 5px;
+		z-index: 1;
+		position: fixed;
+		left: 75%;
+		padding: 1px;
+	}
+	.totalContainer {
+		width: 100%;
+		text-align: center;
+	}
+	.divTotal, .divResult {
+		width: 45%;
+		margin-right: 3px;
+		margin-left: 3px;
+	}
+	.totalBarContainer {
+		width: 50%;
+		margin: auto;
+	}
+	.totalDiv {
+		display: block;
+	}
+	.setGoal {
+		width: 10%;
+	}
 }
 
 /* iPhone 5 */
+
 @media screen and (max-width: 320px) {
-.listNamesParent{
-    width: 100%;
+	.listNamesParent {
+		width: 100%;
+	}
+	header {
+		font-size: 33px;
+	}
 }
-header{
-    font-size: 33px;
+
+.bgColorDiv {
+	width: 60%;
+	display: inline-block;
 }
+
+@media screen and (min-width: 400px) {
+	.addForm {
+		margin: auto;
+	}
+}
+
+@media screen and (min-width: 550px) {
+	.bgColorDiv {
+		width: 75%;
+	}
+}
+
+@media screen and (min-width: 950px) {
+	.bgColorDiv {
+		width: 40%;
+	}
 }

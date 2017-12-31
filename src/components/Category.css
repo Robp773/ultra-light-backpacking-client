@@ -1,88 +1,74 @@
-.category{
-    background: #4A4E4C;
-    position: relative;
-    border-top: 1px solid #52DEE5;
-    border-bottom: 1px solid #52DEE5;
-    font-size: 0;
-    color: white;
-    text-align: center;
+.category {
+	background: #4A4E4C;
+	position: relative;
+	border-top: 1px solid #52DEE5;
+	border-bottom: 1px solid #52DEE5;
+	font-size: 0;
+	color: white;
+	text-align: center;
 }
-
 .category:active {
-    color: #52DEE5;
+	color: #52DEE5;
 }
-
-.fieldset{
-    padding: 5px;
-    border: 0;
-    margin: 0;
+.fieldset {
+	padding: 5px;
+	border: 0;
+	margin: 0;
 }
-.resultsParent{    
-    font-size: 15px;
-    width: 100%;
+.resultsParent {
+	font-size: 15px;
+	width: 100%;
 }
-
-h3{
-    font-size: 25px;
-    
-    margin: 0;
+h3 {
+	font-size: 25px;
+	margin: 0;
 }
-
-.weightTotal, .itemTotal{
-
-    font-size: 15px;
+.weightTotal, .itemTotal {
+	font-size: 15px;
 }
-
-.addBtn{
-    margin: 10px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    display: inline-block;
+.addBtn {
+	margin: 10px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: inline-block;
 }
-
-.resultItemSection{
-    
-    display: block;
-    font-size: 0;
-
+.resultItemSection {
+	display: block;
+	font-size: 0;
 }
-input{
-    text-align: center;
-    display: inline-block;
-    font-size: 15px;
+input {
+	text-align: center;
+	display: inline-block;
+	font-size: 15px;
 }
-.deleteBtn{
-    font-size: 15px;
-    text-align: center;
-    width: 10%;
-    margin-left: 3px;
+.deleteBtn {
+	font-size: 15px;
+	text-align: center;
+	width: 10%;
+	margin-left: 3px;
 }
-.name{
-    width: 60%;
+.name {
+	width: 60%;
 }
-.weight{
-    width: 15%
+.weight {
+	width: 15%
 }
-.addOrSub{
-    font-size: 10px;
+.addOrSub {
+	font-size: 10px;
 }
-.addForm{
-        margin: auto;
-    }
-    .emptyListDiv{
-        background: #D3D0CB;
-    }
-
+.addForm {
+	margin: auto;
+}
+.emptyListDiv {
+	background: #D3D0CB;
+}
 @media screen and (min-width: 550px) {
-
-    .category{
-      margin: auto;
-      width: 50%;
-    }
-    .name{
-        width: 45%;
-    }
-    
+	.category {
+		margin: auto;
+		width: 50%;
+	}
+	.name {
+		width: 45%;
+	}
 }
-    

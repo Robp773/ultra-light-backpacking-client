@@ -1,36 +1,31 @@
-.topCategory{
-    display: inline-block;
-    position: relative;
+-.topCategory {
+	display: inline-block;
+	position: relative;
 }
-.addForm{
-    margin: 5px;
+.addForm {
+	margin: 5px;
 }
-.categoryIcon{
-
-    width: 50px;
-    float: right;
-    margin: 5px;
+.categoryIcon {
+	width: 50px;
+	float: right;
+	margin: 5px;
 }
-.bgColorDiv{
-    width: 60%;
-    display: inline-block;
+.bgColorDiv {
+	width: 60%;
+	display: inline-block;
 }
-
 @media screen and (min-width: 400px) {
-.addForm{
-margin: auto;
-}    
-
+	.addForm {
+		margin: auto;
+	}
 }
-
 @media screen and (min-width: 550px) {
-.bgColorDiv{
-    width: 75%;
+	.bgColorDiv {
+		width: 75%;
+	}
 }
-}
-
 @media screen and (min-width: 950px) {
-    .bgColorDiv{
-        width: 40%;
-    }
+	.bgColorDiv {
+		width: 40%;
+	}
 }

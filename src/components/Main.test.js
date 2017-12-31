@@ -9,6 +9,5 @@ import Main from './Main';
 describe('<Main />', () => {
     it('Renders without crashing', () => {
  expect(1).toEqual(1)
-        
     });
 });

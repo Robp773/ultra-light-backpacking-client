@@ -10,13 +10,10 @@ render(){
             <h3>{this.props.title}</h3>
             <div className='itemTotal'>{this.props.itemTotal} items</div> 
             <div className='weightTotal'>{this.props.weightTotal.toFixed(2)} ounces</div> 
-        </div>        
-        
-      
-            
+        </div>                   
         <img className='categoryIcon' alt='Category Icon' src={this.props.imgSrc}/>
         </div>
-</div>
+    </div>
         )
     }
 }

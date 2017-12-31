@@ -1,85 +1,75 @@
-.modalBG{
-    width: 100%;
-    height: 1000px;
-    position: fixed;
-    z-index: 1;
-    background:rgba(74, 78, 76, .75);
+.modalBG {
+	width: 100%;
+	height: 1000px;
+	position: fixed;
+	z-index: 1;
+	background: rgba(74, 78, 76, .75);
 }
-.modalText{
-    border-radius: 3%;
-    top: 10%;
-    width: 100%;
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    background: rgba(255,255,255, .9);
-    padding-right: 20px;
-    padding-left: 20px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.modalText {
+	border-radius: 3%;
+	top: 10%;
+	width: 100%;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	transform: translateX(-50%);
+	background: rgba(255, 255, 255, .9);
+	padding-right: 20px;
+	padding-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
-
-.text{
-    margin: 5px;
-    font-weight: bold;
+.text {
+	margin: 5px;
+	font-weight: bold;
 }
-.landingImg{
-    vertical-align: middle;
-    margin-left: 5px;
-    display: inline-block;
-    width: 55px;
+.landingImg {
+	vertical-align: middle;
+	margin-left: 5px;
+	display: inline-block;
+	width: 55px;
 }
-.h3Text{
-    text-decoration: underline;
-    display: inline-block;
+.h3Text {
+	text-decoration: underline;
+	display: inline-block;
 }
-
-
 .startBtn {
-    border-radius: 4px;
-    background-color: #f4511e;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 20px;
-    padding: 20px;
-    width: 200px;
-    transition: all 0.25s;
-    cursor: pointer;
-    margin: 5px;
-  }
-  
-  .startBtn .spanStartBtn {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.25s;
-  }
-  
-  .startBtn .spanStartBtn:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.25s;
-  }
-  
-  .startBtn:hover .spanStartBtn {
-    padding-right: 25px;
-  }
-  
-  .startBtn:hover .spanStartBtn:after {
-    opacity: 1;
-    right: 0;
-  }
-
-  @media screen and (min-width: 750px) {
-.modalText{
-
-  width: 40%;
-
-  } 
-  }
+	border-radius: 4px;
+	background-color: #f4511e;
+	border: none;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 20px;
+	padding: 20px;
+	width: 200px;
+	transition: all 0.25s;
+	cursor: pointer;
+	margin: 5px;
+}
+.startBtn .spanStartBtn {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.25s;
+}
+.startBtn .spanStartBtn:after {
+	content: '\00bb';
+	position: absolute;
+	opacity: 0;
+	top: 0;
+	right: -20px;
+	transition: 0.25s;
+}
+.startBtn:hover .spanStartBtn {
+	padding-right: 25px;
+}
+.startBtn:hover .spanStartBtn:after {
+	opacity: 1;
+	right: 0;
+}
+@media screen and (min-width: 750px) {
+	.modalText {
+		width: 40%;
+	}
+}

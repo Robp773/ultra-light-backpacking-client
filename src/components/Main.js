@@ -21,7 +21,6 @@ export class Main extends React.Component{
         this.handleChoice = this.handleChoice.bind(this);
         this.seeListsAgain = this.seeListsAgain.bind(this);
         this.onStart = this.onStart.bind(this);
-        
     }
 // set the initial state of the client by retrieving their selected list
     handleChoice(listName){
@@ -52,7 +51,6 @@ export class Main extends React.Component{
                 })
             })
             this.setState({selectionMade: true})
-            
         }
         }
         // set the selected name to state to be used after confirmation for a delete request

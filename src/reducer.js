@@ -13,7 +13,6 @@ const initialState =
     firstaid: [],
     misc: []
 } 
-// check immutability
 export const reducer =  (state = initialState, action) =>{
 
 	if(action.type === 'ADD_ITEM'){

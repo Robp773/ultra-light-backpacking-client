@@ -28,7 +28,6 @@ handleSaveClick(){
     })    
 }
 
-
 render(){
         let totalsObj = this.props.totals;  
         let totalLbs, weightClass, feedback;
@@ -62,7 +61,6 @@ render(){
         else if(totalLbs > 30){
             weightClass = 'Heavy Weight'
         }
-
         // setting feedback variable to help direct user action
         if(totalsObj.totalItems === 0){
             feedback = "Please Add Some Items to the List"
@@ -90,7 +88,6 @@ render(){
                     src='..\images\man-2766763_1280 (1).png'/>
                 </header>
             </div>
-
             {/* fixed side bar */}
             <div className='sideBar'> 
                 <button className='showListsBtn' onClick={()=>{this.handleListsClick()}}>
@@ -133,7 +130,6 @@ render(){
                     onChange={()=>{this.handleInputChange(Number(this.goalInput.value))}}/> lbs
                     </div>
                 </div>
-
                 <Feedback feedback={feedback}/>
             </div>
         </div>         

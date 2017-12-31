@@ -1,5 +1,3 @@
-
-
 .addForm{
     color: black;
     font-weight: bold;
@@ -8,21 +6,21 @@
     margin: 5px;   
     padding:10px;
 }
-.addInput{
-    display: block;
-    width: 100%
+.addInput {
+	display: block;
+	width: 100%
 }
-.addInputName{
-    width: 45%
+.addInputName {
+	width: 45%
 }
-.addInputWeight{
-    width: 10%
+.addInputWeight {
+	width: 10%
 }
-.addFormSubmit{
-    font-size: 15px;
-    display: inline-block;
-    margin-left: 1px;
+.addFormSubmit {
+	font-size: 15px;
+	display: inline-block;
+	margin-left: 1px;
 }
-legend{
-    margin: auto;
+legend {
+	margin: auto;
 }

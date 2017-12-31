@@ -1,45 +1,48 @@
 @keyframes slideDown {
-    0%   {max-height: 0px;}
-    100% {max-height: 200px;}
+	0% {
+		max-height: 0px;
+	}
+	100% {
+		max-height: 200px;
+	}
 }
-
-.scrollableParent{
-    margin: 5px;
-    background: #D3D0CB;
-    font-size: 0;
-    text-align: center;
-    overflow-y: scroll;
-    max-height: 200px;
-    animation: .17s ease-in 1 slideDown;
+.scrollableParent {
+	margin: 5px;
+	background: #D3D0CB;
+	font-size: 0;
+	text-align: center;
+	overflow-y: scroll;
+	max-height: 200px;
+	animation: .17s ease-in 1 slideDown;
 }
-.weightColumn, .nameColumn{
-    display: inline-block;
-    width: 50%;
-    font-size: 15px;
+.weightColumn, .nameColumn {
+	display: inline-block;
+	width: 50%;
+	font-size: 15px;
 }
-h4{
-    margin: 0;
-    display: inline-block;
-    width: 45%;
-    font-size: 15px;
+h4 {
+	margin: 0;
+	display: inline-block;
+	width: 45%;
+	font-size: 15px;
 }
-form{
-    font-size: 15px;
+form {
+	font-size: 15px;
 }
-.nameHeader{
-    width: 60%;
+.nameHeader {
+	width: 60%;
 }
-.weightHeader{
-width: 15%;
+.weightHeader {
+	width: 15%;
 }
-fieldset{
-    border: 0;
+fieldset {
+	border: 0;
 }
-.listItemForm{
-    background-image: url(/images/mountain-background.jpeg);
-    background-position: top;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    font-size: 18px;
-    color: black;
+.listItemForm {
+	background-image: url(/images/mountain-background.jpeg);
+	background-position: top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	font-size: 18px;
+	color: black;
 }
