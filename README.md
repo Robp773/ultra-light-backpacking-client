@@ -31,8 +31,16 @@ Heroku
 React-Notifications - https://www.npmjs.com/package/react-notifications
 React styled components - https://www.styled-components.com/
 
+## Screenshots
+
+[![https://gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e](https://i.gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e.png)](https://gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e)
+
+[![https://gyazo.com/3a099ea7d6badb5237e1b67f83108bed](https://i.gyazo.com/3a099ea7d6badb5237e1b67f83108bed.png)](https://gyazo.com/3a099ea7d6badb5237e1b67f83108bed)
+
+![mobile screenshot](/images/mobileScreenshot.png)
+
 ## Attributions
-[![https://gyazo.com/f3211d6c799d5eff8c124c694660f277](https://i.gyazo.com/f3211d6c799d5eff8c124c694660f277.png)](https://gyazo.com/f3211d6c799d5eff8c124c694660f277)
+
 
 Category background photo via https://www.goodfreephotos.com/
 
