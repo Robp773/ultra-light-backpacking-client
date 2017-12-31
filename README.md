@@ -33,11 +33,8 @@ React styled components - https://www.styled-components.com/
 
 ## Screenshots
 
-[![https://gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e](https://i.gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e.png)](https://gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e)
-
-[![https://gyazo.com/3a099ea7d6badb5237e1b67f83108bed](https://i.gyazo.com/3a099ea7d6badb5237e1b67f83108bed.png)](https://gyazo.com/3a099ea7d6badb5237e1b67f83108bed)
-
-<img src="https://github.com/Robp773/ultra-light-backpacking-client/blob/master/public/images/mobileScreenshot.png" width="200" height="200">
+<img src="https://i.gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e.png" width="200" height="200">
+<img src="https://i.gyazo.com/3a099ea7d6badb5237e1b67f83108bed.png" width="200" height="200">
 
 ## Attributions
 
