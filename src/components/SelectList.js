@@ -11,7 +11,7 @@ export default class SelectList extends React.Component{
                 </header>
                 <div className='listBody'>
                     <div className='listNamesParent' >             
-                        <h3 className='selectH3' >Select a Lidsfghgfdsast</h3>
+                        <h3 className='selectH3' >Select a List</h3>
                         {this.props.newListInput}
                         {this.props.listNames}
                     </div>
