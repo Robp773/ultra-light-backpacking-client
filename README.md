@@ -34,7 +34,7 @@ React styled components - https://www.styled-components.com/
 ## Screenshots
 
 <img src="https://i.gyazo.com/c060a78ed5eecd01a903f3b3fd161a2e.png" width="350" height="250">
-<img src="https://i.gyazo.com/3a099ea7d6badb5237e1b67f83108bed.png" width="350" height="250" display="inline-block">
+<img src="https://i.gyazo.com/d64b7e9d634f580ed00fa9f4252c96c8.png" width="350" height="250" display="inline-block">
 
 ## Attributions
 
