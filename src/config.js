@@ -1,4 +1,3 @@
-'use strict';
 
 let API_BASE_URL; 
 if(process.env.NODE_ENV==='production') { 
