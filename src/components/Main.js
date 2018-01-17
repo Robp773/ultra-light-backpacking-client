@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import {setListState} from '../actions.js';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import LandingModal from './LandingModal';
+import SignUp from './SignUp'
 
 export class Main extends React.Component{
     constructor(props){
@@ -108,7 +109,6 @@ export class Main extends React.Component{
     }
 
     onStart(){
-        console.log('on start')
         this.setState({landingPage: false})
     }
 
@@ -140,6 +140,7 @@ export class Main extends React.Component{
         else {
                 return (                            
                     <div>
+                        <SignUp/>
                     <div className='containerDiv'>
                         {landingModal}
                         <SelectList newListInput={this.state.newListInput} listNames={this.state.listNames}/>
