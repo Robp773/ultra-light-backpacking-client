@@ -4,6 +4,8 @@
 	border-top: 1px solid #52DEE5;
 	border-bottom: 1px solid #52DEE5;
 	font-size: 0;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	color: white;
 	text-align: center;
 }
@@ -45,7 +47,9 @@ input {
 .deleteBtn {
 	font-size: 15px;
 	text-align: center;
-	width: 10%;
+	width: 15%;
+	padding-bottom: 1px;
+	padding-top: 1px;
 	margin-left: 3px;
 }
 .name {
@@ -70,5 +74,8 @@ input {
 	}
 	.name {
 		width: 45%;
+	}
+	.deleteBtn{
+		width: 10%;
 	}
 }
