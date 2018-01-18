@@ -6,25 +6,29 @@ import {connect} from 'react-redux';
 import {setListState} from '../actions.js';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import LandingModal from './LandingModal';
-import SignUp from './SignUp'
+import SignUp from './SignUp';
 
 export class Main extends React.Component{
     constructor(props){
          super(props);
-        this.state = {
+            this.state = {
+            activeUser: null,
             // tracks if user has selected a list
             selectionMade: false,
             // to open delete confirm modal
             deleteConfirm: false,
             // to determine if landing page is visible
-            landingPage: true
+            landingPage: true,
+            loggedIn: false
         }
         this.handleChoice = this.handleChoice.bind(this);
         this.seeListsAgain = this.seeListsAgain.bind(this);
         this.onStart = this.onStart.bind(this);
+        this.onLogin = this.onLogin.bind(this);
     }
 // set the initial state of the client by retrieving their selected list
     handleChoice(listName){
+        // ${this.state.activeUser}
         fetch(`${API_BASE_URL}/list-state/${listName}`)
         .then((res)=>{
             res.json()
@@ -35,7 +39,7 @@ export class Main extends React.Component{
         this.setState({selectionMade: true})
     }
 //  handle creating a new list with the name chosen by the user
-    handleNewList(value){
+    handleNewList(value, userId){
         if(value === ''){
             return NotificationManager.error('Please enter a name.')
         }
@@ -43,7 +47,7 @@ export class Main extends React.Component{
         fetch(`${API_BASE_URL}/list-state`, {
             method: 'post',
             headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({listName: value})
+            body: JSON.stringify({listName: value, userId: userId})
             })
             .then((res)=>{
                 res.json()
@@ -71,14 +75,27 @@ export class Main extends React.Component{
         }
     // before mounting, make a GET request to retrieve the a list of all packing list names
     componentWillMount(){
-        // form for adding new lists
-        const newListInput =
-         <form className='createListForm' onSubmit={(e)=>{e.preventDefault(); this.handleNewList(this.createListInput.value)}}>
+       
+    };
+    // used to allow a user to go back to SelectList screen after they made an initial choice
+    seeListsAgain(){
+        this.setState({selectionMade: false});
+        this.onLogin(this.state.activeUser)    
+    }
+    onStart(){
+        this.setState({landingPage: false})
+    }
+    onLogin(username){
+        this.setState({loggedIn: true, activeUser: username})
+        
+         // form for adding new lists
+         const newListInput =
+         <form className='createListForm' onSubmit={(e)=>{e.preventDefault(); this.handleNewList(this.createListInput.value, this.state.activeUser)}}>
             <input ref={(input)=>{this.createListInput = input}}className='newListInput' type='text' placeholder='Enter New List Name'></input>
             <button className='createListBtn' type='submit'>Create</button>
         </form>
 
-        fetch(`${API_BASE_URL}/list-state/name-list`)
+        fetch(`${API_BASE_URL}/list-state/name-list/${this.state.activeUser}`)
         .then((res)=>{           
          res.json()
             .then((resJSON)=>{
@@ -101,24 +118,21 @@ export class Main extends React.Component{
                 this.setState({listNames: listNameDivs, newListInput: newListInput});
             })
         })
-    };
-// used to allow a user to go back to SelectList screen after they made an initial choice
-    seeListsAgain(){
-        this.setState({selectionMade: false});
-        this.componentWillMount()
-    }
-
-    onStart(){
-        this.setState({landingPage: false})
+        
     }
 
     render(){    
+        console.log(this.state.activeUser)
     let landingModal;
+    let loggedIn;
+
+    if(!this.state.loggedIn){
+        loggedIn = <SignUp onLogin={this.onLogin}/>
+    }
     if(this.state.landingPage){
         landingModal = <LandingModal onStart={()=>this.onStart()}/>
     }
     let deleteConfirmModal;
-
 
     if(this.state.deleteConfirm){
         deleteConfirmModal = <div className='deleteModal'>
@@ -139,14 +153,12 @@ export class Main extends React.Component{
         // otherwise display the list of lists
         else {
                 return (                            
-                    <div>
-                        <SignUp/>
-                    <div className='containerDiv'>
+                    <div className='containerDiv'>                        
+                        {loggedIn}
                         {landingModal}
                         <SelectList newListInput={this.state.newListInput} listNames={this.state.listNames}/>
                         {deleteConfirmModal}
                         <NotificationContainer/>
-                    </div>
                     </div>
                 )
             }
