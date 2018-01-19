@@ -67,7 +67,7 @@ export class Main extends React.Component{
         handleDelete(listName){
             fetch(`${API_BASE_URL}/list-state/${listName}`, {method: 'delete'})
             .then(()=>{
-                this.componentWillMount()
+                this.onLogin(this.state.activeUser)
             })
             .then(()=>{
                 this.setState({deleteConfirm: false})
@@ -87,7 +87,6 @@ export class Main extends React.Component{
     }
     onLogin(username){
         this.setState({loggedIn: true, activeUser: username})
-        
          // form for adding new lists
          const newListInput =
          <form className='createListForm' onSubmit={(e)=>{e.preventDefault(); this.handleNewList(this.createListInput.value, this.state.activeUser)}}>
@@ -122,7 +121,6 @@ export class Main extends React.Component{
     }
 
     render(){    
-        console.log(this.state.activeUser)
     let landingModal;
     let loggedIn;
 
