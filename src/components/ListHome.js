@@ -11,8 +11,6 @@ export class ListHome extends React.Component{
   }
 
   render(){
-      console.log(this.props.fullState)
-
       const categories = {
         hiking: this.props.hiking,
         clothing: this.props.clothing,
