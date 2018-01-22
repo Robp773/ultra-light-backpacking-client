@@ -20,7 +20,7 @@ export class ListHome extends React.Component{
         cooking: this.props.cooking,
         water: this.props.water,
         hygiene: this.props.hygiene,
-        firstaid: this.props.firstaid,
+        firstAid: this.props.firstaid,
         misc: this.props.misc,
       }
 let totalItems = 0
