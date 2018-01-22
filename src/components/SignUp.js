@@ -53,12 +53,18 @@ export default class  SignUp extends React.Component{
         <div className='modalBG'>
             <div className='formsContainer'>
                 <div className='signInForm'>
-                    <h3 className='h3Login'>Sign In</h3>
-                    <form onSubmit={(e)=>{e.preventDefault(); this.login(this.loginUserId.value, this.loginPassword.value)}}>
-                        <input required className='signUpInput' ref={(input)=>{this.loginUserId = input}} name='username' type='text' placeholder='Username'/>
-                        <input required className='signUpInput' ref={(input)=>{this.loginPassword = input}} name='password' type='text' placeholder='Password'/>
-                        <button className='submitLogin' type='submit'>Submit</button>
-                    </form>
+                    <div className='demoDiv'> 
+                        <h4 className='demoh4'>Demo Account</h4>
+                        <div> 
+                            <span><b>Username</b>: "Demo" <b>Password</b>: "demo-password"</span>
+                        </div>
+                    </div>
+                    <h3 className='h3Login'>Sign In</h3>                   
+                        <form onSubmit={(e)=>{e.preventDefault(); this.login(this.loginUserId.value, this.loginPassword.value)}}>
+                            <input required className='signUpInput' ref={(input)=>{this.loginUserId = input}} name='username' type='text' placeholder='Username'/>
+                            <input required className='signUpInput' ref={(input)=>{this.loginPassword = input}} name='password' type='text' placeholder='Password'/>
+                            <button className='submitLogin' type='submit'>Submit</button>
+                        </form>
                 </div>
 
                 <span className='orSpan'>OR</span>

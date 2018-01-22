@@ -7,6 +7,16 @@
     margin: auto;
     background: white;
 }
+.demoDiv{
+    background: lightgreen;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 5px;
+	padding: 5px;
+}
+.demoh4{
+	font-size: 20px;
+}
 .creationFeedback{
 	margin: auto;
     width: 75%;
