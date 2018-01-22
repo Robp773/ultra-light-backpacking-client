@@ -29,7 +29,7 @@ export class Main extends React.Component{
 // set the initial state of the client by retrieving their selected list
     handleChoice(listName){
         // ${this.state.activeUser}
-        fetch(`${API_BASE_URL}/list-state/${listName}`)
+        fetch(`${API_BASE_URL}/list-state/${this.state.activeUser}/${listName}`)
         .then((res)=>{
             res.json()
             .then((resJSON)=>{        
@@ -73,10 +73,7 @@ export class Main extends React.Component{
                 this.setState({deleteConfirm: false})
             })
         }
-    // before mounting, make a GET request to retrieve the a list of all packing list names
-    componentWillMount(){
-       
-    };
+   
     // used to allow a user to go back to SelectList screen after they made an initial choice
     seeListsAgain(){
         this.setState({selectionMade: false});
@@ -92,7 +89,7 @@ export class Main extends React.Component{
          <form className='createListForm' onSubmit={(e)=>{e.preventDefault(); this.handleNewList(this.createListInput.value, this.state.activeUser)}}>
             <input ref={(input)=>{this.createListInput = input}}className='newListInput' type='text' placeholder='Enter New List Name'></input>
             <button className='createListBtn' type='submit'>Create</button>
-        </form>
+         </form>
 
         fetch(`${API_BASE_URL}/list-state/name-list/${this.state.activeUser}`)
         .then((res)=>{           

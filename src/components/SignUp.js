@@ -17,7 +17,7 @@ export default class  SignUp extends React.Component{
             })
             .then((res)=>{
                 res.json()
-                .then((resJSON)=>{     
+                .then((resJSON)=>{   
                     this.setState({creationFeedback: resJSON.comment})
                     if(!resJSON.taken){
                         NotificationManager.success(`Logged In as ${username}`)          
