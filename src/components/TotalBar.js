@@ -32,15 +32,10 @@ render(){
         let totalsObj = this.props.totals;  
         let totalLbs, weightClass, feedback;
         let weightGoal = this.props.fullState.weightGoal;        
-        let unitOfMeasurement = 'lbs';    
         
         totalLbs= Number(totalsObj.totalWeight.toFixed(2));
 
         let exceededNum = weightGoal - totalLbs
-
-        if(totalLbs - weightGoal < 1){
-            unitOfMeasurement = 'ozs'
-        }
 
         // setting weightClass variable depending on the total pack weight
         if(totalLbs === 0){
@@ -75,7 +70,7 @@ render(){
             feedback =`Goal Exceeded by ${exceededNum.toFixed(2)} lbs`;
         }
         else{
-            feedback = `${(totalLbs - weightGoal).toFixed(2)} ${unitOfMeasurement} to drop to meet goal weight.`
+            feedback = `${(totalLbs - weightGoal).toFixed(2)} lbs to drop to meet goal weight.`
         }
 
     return(

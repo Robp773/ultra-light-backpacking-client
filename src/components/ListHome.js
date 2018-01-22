@@ -20,14 +20,18 @@ export class ListHome extends React.Component{
         cooking: this.props.cooking,
         water: this.props.water,
         hygiene: this.props.hygiene,
-        firstAid: this.props.firstaid,
+        firstaid: this.props.firstaid,
         misc: this.props.misc,
       }
-
+let totalItems = 0
       let categoryKeys = Object.keys(categories);
-
-      let totalItems = categoryKeys.length;
-      let totalWeight = categoryKeys.reduce((accumulator, category)=>{
+      let {hiking, clothing, navigation, shelter, sleep, cooking, water, hygiene, firstaid, misc} = this.props.fullState
+      let categoriesArray = [hiking, clothing, navigation, shelter, sleep, cooking, water, hygiene, firstaid, misc]
+             categoriesArray.map((category)=>{
+              totalItems =  totalItems + category.length
+              return totalItems;
+            })
+let totalWeight = categoryKeys.reduce((accumulator, category)=>{
         return accumulator += categories[category].reduce((accumulator, item) => {
           return accumulator += Number(item.weight);
         }, 0)
@@ -40,12 +44,11 @@ export class ListHome extends React.Component{
         totalWeight: totalWeight,
         weightGoal: this.props.fullState.weightGoal
       }
-
       let renderCategories = categoryKeys.map((category) => {
         let categoryTitle = CATEGORIES[category];
         let categoryImage = IMAGES[category];
         return <Category 
-                key={categoryTitle}
+                key={category}
                 title={categoryTitle}
                 imgSrc={`images/category-icons/${categoryImage}`}
                 thisState={categories[category]}
