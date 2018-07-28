@@ -43,14 +43,11 @@ input {
 	text-align: center;
 	display: inline-block;
 	font-size: 15px;
+	width: 35%;
 }
 .deleteBtn {
 	font-size: 15px;
-	text-align: center;
-	width: 15%;
-	padding-bottom: 1px;
-	padding-top: 1px;
-	margin-left: 3px;
+
 }
 .name {
 	width: 60%;

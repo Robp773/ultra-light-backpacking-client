@@ -46,3 +46,13 @@ fieldset {
 	font-size: 18px;
 	color: black;
 }
+
+.selectInput{
+	width: fit-content;
+	margin: 1px;
+}
+
+.fieldParent{
+	background: white;
+	padding: 2px 0px;
+}
