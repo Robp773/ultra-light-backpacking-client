@@ -10,9 +10,7 @@
 	display: block;
 	width: 100%
 }
-.addInputName {
-	width: 45%
-}
+
 .addInputWeight {
 	width: 10%
 }
@@ -20,6 +18,10 @@
 	font-size: 15px;
 	display: inline-block;
 	margin-left: 1px;
+}
+
+.addInputImportance{
+	margin: 1px;
 }
 legend {
 	margin: auto;
