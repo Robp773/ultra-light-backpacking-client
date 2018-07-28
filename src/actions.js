@@ -1,8 +1,9 @@
-export const addItem = (name, weight, title) =>({
+export const addItem = (name, weight, importance, title) =>({
     type: 'ADD_ITEM',
     name: name,
     weight: weight,
-    title: title
+    title: title,
+    importance: importance
 });
 export const updateItem = (itemState, index, title)=>({
     type: 'UPDATE_ITEM',
