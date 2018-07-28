@@ -16,7 +16,7 @@ const initialState =
 export const reducer =  (state = initialState, action) =>{
 
 	if(action.type === 'ADD_ITEM'){
-		return Object.assign({}, state, {[action.title]:[ ...state[action.title], {name: action.name, weight: action.weight}]})	
+		return Object.assign({}, state, {[action.title]:[ ...state[action.title], {name: action.name, weight: action.weight, importance: action.importance}]})	
 	}
 	
 	if(action.type === 'UPDATE_ITEM'){		
