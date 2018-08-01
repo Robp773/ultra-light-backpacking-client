@@ -29,7 +29,8 @@ header {
 }
 
 .setGoal {
-	width: 20%;
+	width: 8%;
+    text-align: center;
 }
 
 .totalContainer {
@@ -38,21 +39,6 @@ header {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.divTotal, .divResult {
-	padding-left: 5px;
-	padding-right: 5px;
-	width: 45%;
-	display: inline-block;
-}
-
-.divResult {
-	text-align: right;
-}
-
-.divTotal {
-	text-align: left;
 }
 
 .listDataContainer {
