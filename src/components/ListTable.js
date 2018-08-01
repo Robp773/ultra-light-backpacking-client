@@ -35,20 +35,22 @@ export class ListTable extends React.Component {
                         console.log(item)
 
                         return (
-                                <fieldset key={index} onChange={() => { this.handleChange({ name: this[name].value, weight: this[weight].value }, index) }}>
+                                <fieldset key={index} onChange={() => { this.handleChange({ name: this[name].value, weight: this[weight].value, importance: this[importance].value }, index) }}>
                                         <div className='fieldParent'>
 
-                                                <input ref={(input) => { this[name] = input }} type='text'
+                                                <input className='listInput nameInput' ref={(input) => { this[name] = input }} type='text'
                                                         onClick={(e) => { e.stopPropagation() }}
                                                         value={item.name} onChange={() => { this.setState({ change: !this.state.change }) }} />
 
-                                                <input ref={(input) => { this[weight] = input }} type='number'
+                                                <input className='listInput weightInput' ref={(input) => { this[weight] = input }} type='number'
                                                         onClick={(e) => { e.stopPropagation() }}
-                                                        value={item.weight} className='indivResult weight' onChange={() => { this.setState({ change: !this.state.change }) }} />
+                                                        value={item.weight} onChange={() => { this.setState({ change: !this.state.change }) }} />
 
-                                                <select className='selectInput' ref={(input) => { this[importance] = input }}
+                                                <select className='listInput selectInput'
+                                                        ref={(input) => { this[importance] = input }}
                                                         onClick={(e) => { e.stopPropagation() }}
                                                         value={item.importance} selected={item.importance} onChange={() => { this.setState({ change: !this.state.change }) }}>
+                                                        
                                                         <option value='critical'>Critical</option>
                                                         <option value='important'>Important</option>
                                                         <option value='unimportant'>Unimportant</option>

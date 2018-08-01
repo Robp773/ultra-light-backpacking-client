@@ -9,6 +9,7 @@ export const updateItem = (itemState, index, title)=>({
     type: 'UPDATE_ITEM',
     name: itemState.name,
     weight: itemState.weight,
+    importance: itemState.importance,
     title: title,
     index: index
 });
