@@ -33,7 +33,7 @@ export class AddForm extends React.Component {
             <form id='addForm' className='addForm'
                 onClick={(e) => { e.stopPropagation() }}
                 onSubmit={(e) => { this.onSubmit(e) }}>
-                <input ref={(input) => { this.inputName = input }} className='addInputName' name='name' type='text' placeholder='New Item Name' />
+                <input ref={(input) => { this.inputName = input }} className='addInputName' name='name' type='text' placeholder='Item Name' />
                 <input ref={(input) => { this.inputWeight = input }} className='addInputWeight' name='weight' type='number' placeholder='ozs' />
                 <select ref={(input) => { this.inputImportance = input }} className='addInputImportance' name='importance'>
                     <option value='' selected>Priority</option>
@@ -42,7 +42,7 @@ export class AddForm extends React.Component {
                     <option value='unimportant'>Unimportant</option>
                 </select>
 
-                <button className='addFormSubmit' type='submit' onClick={(e) => { e.stopPropagation() }}>Submit</button>
+                <button className='addFormSubmit' type='submit' onClick={(e) => { e.stopPropagation() }}>Add</button>
             </form>
         )
     }
