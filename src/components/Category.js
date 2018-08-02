@@ -1,61 +1,93 @@
-import React from 'react';
-import './Category.css';
-import AddForm from './AddForm';
-import ListTable from './ListTable';
-import CategoryTotal from './CategoryTotal';
+import React from "react";
+import "./Category.css";
+import AddForm from "./AddForm";
+import ListTable from "./ListTable";
+import CategoryTotal from "./CategoryTotal";
+import { CSSTransitionGroup } from "react-transition-group";
 
-export default class Category extends React.Component{
-
-    state = {
+export default class Category extends React.Component {
+  state = {
     // if user clicks on this specific Category component
     selected: false,
     // if user clicks the '+' button to open AddForm component
     formOpen: false,
     itemTotal: 0,
     weightTotal: 0
-    } 
+  };
 
-// if user enters a new value into an existing list item input
-render(){  
+  // if user enters a new value into an existing list item input
+  render() {
     let weightTotal = 0;
     let buttonSymbol, addForm;
-    for(let i=0; i<this.props.thisState.length; i++){
-        weightTotal += this.props.thisState[i].weight;
+    for (let i = 0; i < this.props.thisState.length; i++) {
+      weightTotal += this.props.thisState[i].weight;
     }
 
     // if the form is open change the  form open button symbol from '+' to '-'
-    if(this.state.formOpen === true){
-     buttonSymbol = <i className="fa fa-minus  addOrSub" aria-hidden="true"></i>;
-    //  initialize an AddForm component with the Category's title
-     addForm = <AddForm title = {this.props.title}/>
+    if (this.state.formOpen === true) {
+      buttonSymbol = <i className="fa fa-minus  addOrSub" aria-hidden="true" />;
+      //  initialize an AddForm component with the Category's title
+      addForm = <AddForm key={this.props.title} title={this.props.title} />;
+    } else {
+      // otherwise button symbol = '+'
+      buttonSymbol = <i className="fa fa-plus addOrSub" aria-hidden="true" />;
     }
-    else{
-        // otherwise button symbol = '+'
-        buttonSymbol = <i className="fa fa-plus addOrSub" aria-hidden="true"></i>
-        
-    }  
     //   CategoryTotal component with all needed props - used in both conditions
-    const loadedCategory = 
-    <CategoryTotal title= {this.props.title} imgSrc={this.props.imgSrc} itemTotal={this.props.thisState.length} weightTotal={weightTotal} />
-    
-    if(this.state.selected === true){
-        return (
-                <section className='category' onClick={()=> {this.setState({selected: !this.state.selected})}}>
-                    {loadedCategory}
-                    <button className='addBtn' onClick={(e)=> {e.stopPropagation(); this.setState({formOpen: !this.state.formOpen})} } >{buttonSymbol}</button>
-                    {addForm} 
-                    <ListTable title={this.props.title} thisState={this.props.thisState}/>
-                </section>
-                )
- }
+    const loadedCategory = (
+      <CategoryTotal
+        title={this.props.title}
+        imgSrc={this.props.imgSrc}
+        itemTotal={this.props.thisState.length}
+        weightTotal={weightTotal}
+      />
+    );
+
+    if (this.state.selected === true) {
+      return (
+        <section
+          className="category"
+          onClick={() => {
+            this.setState({ selected: !this.state.selected });
+          }}
+        >
+          {loadedCategory}
+          <button
+            className="addBtn"
+            onClick={e => {
+              e.stopPropagation();
+              this.setState({ formOpen: !this.state.formOpen });
+            }}
+          >
+            {buttonSymbol}
+          </button>
+
+          <CSSTransitionGroup
+            transitionName="form"
+            transitionEnterTimeout={0}
+            transitionLeaveTimeout={0}
+          >
+            {addForm}
+          </CSSTransitionGroup>
+
+          <ListTable
+            title={this.props.title}
+            thisState={this.props.thisState}
+          />
+        </section>
+      );
+    }
     //  if this category has not been selected, only display the category total
     else {
-        return (
-                <section className='category' onClick={()=>{this.setState({selected: !this.state.selected})}}>
-                    {loadedCategory}
-                </section>
-               )
-        }
+      return (
+        <section
+          className="category"
+          onClick={() => {
+            this.setState({ selected: !this.state.selected });
+          }}
+        >
+          {loadedCategory}
+        </section>
+      );
     }
+  }
 }
-
