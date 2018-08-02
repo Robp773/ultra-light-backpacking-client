@@ -47,12 +47,46 @@ fieldset {
 	color: black;
 }
 
+.nameInput{
+	width: 35%;
+}
+
+.weightInput{
+	width: 10%;
+	margin-left: 1px;
+}
+
 .selectInput{
-	width: fit-content;
-	margin: 1px;
+margin: 0px 1px;
+}
+
+.selectInput, .weightInput, .nameInput{
+	padding: 0;
+	margin: 0 1px;
+    text-align: center;
 }
 
 .fieldParent{
 	background: white;
-	padding: 2px 0px;
+    padding: 2px 0px;
+    width: 85%;
+    margin: auto;
 }
+
+.displayItems-enter {
+	opacity: 0.01;
+  }
+  
+  .displayItems-enter.displayItems-enter-active {
+	opacity: 1;
+	transition: opacity 500ms ease-in;
+  }
+  
+  .displayItems-leave {
+	opacity: 1;
+  }
+  
+  .displayItems-leave.displayItems-leave-active {
+	opacity: 0.01;
+	transition: opacity 300ms ease-in;
+  }
