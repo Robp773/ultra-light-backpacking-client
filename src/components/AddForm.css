@@ -1,31 +1,71 @@
-.addForm{
-    color: black;
-    font-weight: bold;
-    background: #D3D0CB;
-    width: fit-content;
-    margin: 5px;   
-    padding:10px;
+.addForm {
+  color: whitesmoke;
+  font-weight: bold;
+  width: fit-content;
+  padding: 10px;
+  position: relative;
+  border: 1px solid black;
 }
 
-.addInputName{
-	width: 40%;;
+.hikingFormBG {
+  background: rgba(189, 61, 58, 1);
+}
+
+.clothingFormBG {
+  background: rgba(63, 105, 170, 1);
+}
+
+.navigationFormBG {
+  background: rgba(213, 174, 65, 1);
+}
+
+.shelterFormBG {
+  background: rgba(118, 111, 87, 1);
+}
+.sleepFormBG {
+  background: rgba(228, 122, 46, 1);
+}
+.cookingFormBG {
+  background: rgba(127, 65, 69, 1);
+}
+
+.waterFormBG {
+  background: rgba(46, 74, 98, 1);
+}
+
+.hygieneFormBG {
+  background: rgba(0, 110, 109, 1);
+}
+
+.firstaidFormBG {
+  background: rgba(107, 91, 149, 1);
+}
+
+.miscFormBG {
+  background: rgba(0, 206, 209, 1);
+}
+
+.addInputName {
+  width: 40%;
 }
 .addInputWeight {
-	width: 10%
+  width: 10%;
 }
 
-.addInputName, .addInputWeight, .addInputImportance, addFormSubmit{
-	text-align: center;
-	padding: 0;
-	font-size: 15px;
+.addInputName,
+.addInputWeight,
+.addInputImportance,
+addFormSubmit {
+  text-align: center;
+  padding: 0;
+  font-size: 15px;
 }
 .addFormSubmit {
-	padding: 0 5px;
-	margin: 0 3px;
-    font-size: 15px;
+  padding: 0 5px;
+  margin: 0 2px;
+  font-size: 15px;
 }
 
-
 legend {
-	margin: auto;
+  margin: auto;
 }
