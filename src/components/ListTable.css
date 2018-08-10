@@ -1,92 +1,145 @@
 @keyframes slideDown {
-	0% {
-		max-height: 0px;
-	}
-	100% {
-		max-height: 200px;
-	}
+  0% {
+    max-height: 0px;
+  }
+  100% {
+    max-height: 200px;
+  }
 }
 .scrollableParent {
-	margin: 5px;
-	background: #D3D0CB;
-	font-size: 0;
-	text-align: center;
-	overflow-y: scroll;
-	max-height: 200px;
-	animation: .17s ease-in 1 slideDown;
+  background: #d3d0cb;
+  font-size: 0;
+  text-align: center;
+  overflow-y: scroll;
+  max-height: 200px;
+  animation: 0.17s slideDown ease-in-out;
 }
-.weightColumn, .nameColumn {
-	display: inline-block;
-	width: 50%;
-	font-size: 15px;
+.weightColumn,
+.nameColumn {
+  display: inline-block;
+  width: 50%;
+  font-size: 15px;
 }
 h4 {
-	margin: 0;
-	display: inline-block;
-	width: 45%;
-	font-size: 15px;
+  margin: 0;
+  display: inline-block;
+  width: 45%;
+  font-size: 15px;
 }
 form {
-	font-size: 15px;
+  font-size: 15px;
 }
 .nameHeader {
-	width: 60%;
+  width: 60%;
 }
 .weightHeader {
-	width: 15%;
+  width: 15%;
 }
 fieldset {
-	border: 0;
+    padding: 0;
+    width: 100%;
+    margin: 0;
+    border-width: 0 0 1px 0;
+    border-color: black;
+    border-style: solid
 }
 .listItemForm {
-	background-image: url(/images/mountain-background.jpeg);
-	background-position: top;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
-	font-size: 18px;
-	color: black;
+  background-position: top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-size: 18px;
+  color: black;
+  transition: height 1s;
 }
 
-.nameInput{
-	width: 35%;
+.nameInput {
+  width: 45%;
 }
 
-.weightInput{
-	width: 10%;
-	margin-left: 1px;
+.weightInput {
+  width: 10%;
+  margin-left: 1px;
 }
 
-.selectInput{
-margin: 0px 1px;
+.selectInput {
+  margin: 0px 1px;
 }
 
-.selectInput, .weightInput, .nameInput{
-	padding: 0;
-	margin: 0 1px;
-    text-align: center;
+.selectInput,
+.weightInput,
+.nameInput {
+  padding: 0;
+  margin: 0 1px;
+  text-align: center;
+  border: 0;
+  font-size: 15px;
 }
 
-.fieldParent{
-	background: white;
-    padding: 2px 0px;
-    width: 85%;
-    margin: auto;
+.weightInput,
+.nameInput {
+  border-right: 1px solid black;
+}
+
+.hikingBG {
+  background: rgba(189, 61, 58, 0.7);
+}
+
+.clothingBG {
+  background: rgba(63, 105, 170, 0.7);
+}
+
+.navigationBG {
+  background: rgba(213, 174, 65, 0.7);
+}
+
+.shelterBG {
+  background: rgba(118, 111, 87, 0.7);
+}
+.sleepBG {
+  background: rgba(228, 122, 46, 0.7);
+}
+.cookingBG {
+  background: rgba(127, 65, 69, 0.7);
+}
+
+.waterBG {
+  background: rgba(46, 74, 98, 0.7);
+}
+
+.hygieneBG {
+  background: rgba(0, 110, 109, 0.7);
+}
+
+.firstaidBG {
+  background: rgba(107, 91, 149, 0.7);
+}
+
+.miscBG {
+  background: rgba(0, 206, 209, 0.7);
+}
+
+.fieldParent {
+  border: 1px solid black;
+  display: inline-block;
+  width: 75%;
+  background: whitesmoke;
+  margin: auto;
 }
 
 .displayItems-enter {
-	opacity: 0.01;
-  }
-  
-  .displayItems-enter.displayItems-enter-active {
-	opacity: 1;
-	transition: opacity 500ms ease-in;
-  }
-  
-  .displayItems-leave {
-	opacity: 1;
-  }
-  
-  .displayItems-leave.displayItems-leave-active {
-	opacity: 0.01;
-	transition: opacity 300ms ease-in;
-  }
+  opacity: 0.01;
+}
+
+.displayItems-enter.displayItems-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.displayItems-leave {
+  opacity: 1;
+}
+
+.displayItems-leave.displayItems-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}

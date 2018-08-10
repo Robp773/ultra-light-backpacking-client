@@ -51,7 +51,7 @@ export class ListTable extends React.Component {
             );
           }}
         >
-          <div className="fieldParent">
+          <div className='fieldParent'>
             <input
               className="listInput nameInput"
               ref={input => {
@@ -124,7 +124,7 @@ export class ListTable extends React.Component {
     }
     return (
       <div className="scrollableParent">
-        <form className="listItemForm">
+        <form className={'listItemForm ' + this.props.title.toLowerCase() + 'BG'}>
           <CSSTransitionGroup
             transitionName="displayItems"
             transitionEnterTimeout={0}
