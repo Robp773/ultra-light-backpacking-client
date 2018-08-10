@@ -7,9 +7,7 @@
 	margin: auto;
 	text-align: center
 }
-header {
-	background: rgba(74, 78, 76, 1)
-}
+
 .backpackingIcon {
 	margin: 5px;
 	height: 55px;
@@ -44,9 +42,7 @@ header {
 .newListInput {
 	width: 75%;
 }
-.deleteBtn {
-	text-align: right;
-}
+
 .namesListTable {
 	align: center;
 }

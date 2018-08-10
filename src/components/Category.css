@@ -1,12 +1,6 @@
 .category {
-  background: #4a4e4c;
   position: relative;
-  border-top: 1px solid #52dee5;
-  border-bottom: 1px solid #52dee5;
   font-size: 0;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  color: white;
   text-align: center;
 }
 .category:active {
@@ -48,9 +42,7 @@ h3 {
 .addOrSub {
   font-size: 10px;
 }
-.addForm {
-  margin: auto;
-}
+
 .emptyListDiv {
   background: #d3d0cb;
 }

@@ -3,7 +3,7 @@ import SelectList from './SelectList';
 import ListHome from './ListHome';
 import {API_BASE_URL} from '../config';
 import {connect} from 'react-redux';
-import {setListState} from '../actions.js';
+import {setListState} from '../actions';
 import {NotificationContainer, NotificationManager} from 'react-notifications';
 import LandingModal from './LandingModal';
 import SignUp from './SignUp';
@@ -28,7 +28,6 @@ export class Main extends React.Component{
     }
 // set the initial state of the client by retrieving their selected list
     handleChoice(listName){
-        // ${this.state.activeUser}
         fetch(`${API_BASE_URL}/list-state/${this.state.activeUser}/${listName}`)
         .then((res)=>{
             res.json()
@@ -114,7 +113,6 @@ export class Main extends React.Component{
                 this.setState({listNames: listNameDivs, newListInput: newListInput});
             })
         })
-        
     }
 
     render(){    

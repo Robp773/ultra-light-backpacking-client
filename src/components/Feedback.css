@@ -4,3 +4,8 @@
     border-top: 0px solid black;
     width: 0%;
 }
+
+#feedbackParent{
+    width: fit-content;
+    margin: auto;
+}
