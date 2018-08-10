@@ -14,14 +14,12 @@
 }
 
 .totalBarContainer {
-	background: #4A4E4C;
 	font-size: 0;
 	text-align: center;
 }
 
 header {
 	width: 90%;
-	color: white;
 	display: inline-block;
 	font-size: 35px;
 	margin-bottom: 3px;
@@ -34,6 +32,7 @@ header {
 }
 
 .totalContainer {
+	color: black;
 	font-size: 15px;
 	width: 75%;
 	text-align: center;
@@ -43,7 +42,6 @@ header {
 
 .listDataContainer {
 	padding-bottom: 5px;
-	background: #D3D0CB;
 	font-weight: bold;
 }
 
