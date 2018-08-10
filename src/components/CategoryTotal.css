@@ -1,31 +1,63 @@
 .topCategory {
-	display: inline-block;
-	position: relative;
+  display: inline-block;
+  position: relative;
 }
-.addForm {
-	margin: 5px;
+
+#hiking {
+  background: #bd3d3a;
 }
+#clothing {
+  background: #3f69aa;
+}
+
+#navigation {
+  background: #d5ae41;
+}
+
+#shelter {
+  background: #766f57;
+}
+#sleep {
+  background: #e47a2e;
+}
+#cooking {
+  background: #7f4145;
+}
+
+#water {
+  background: #2e4a62;
+}
+
+#hygiene {
+  background: #006e6d;
+}
+
+#firstaid {
+  background: #6b5b95;
+}
+
+#misc{
+	background: #00CED1;
+}
+
 .categoryIcon {
-	width: 50px;
-	float: right;
-	margin: 5px;
+  width: 50px;
+  float: right;
+  margin: 5px;
 }
 .bgColorDiv {
-	width: 60%;
-	display: inline-block;
+  width: 60%;
+  color: white;
+  display: inline-block;
 }
-@media screen and (min-width: 400px) {
-	.addForm {
-		margin: auto;
-	}
-}
+
 @media screen and (min-width: 550px) {
-	.bgColorDiv {
-		width: 75%;
-	}
+  .bgColorDiv {
+    width: 75%;
+  }
 }
 @media screen and (min-width: 950px) {
-	.bgColorDiv {
-		width: 40%;
-	}
+  .bgColorDiv {
+    width: 40%;
+  }
 }

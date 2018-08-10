@@ -4,7 +4,7 @@ export default class CategoryTotal extends React.Component{
 
 render(){
     return(  
-    <div>
+    <div id={this.props.title.toLowerCase()}>
         <div className='bgColorDiv'>
         <div className='topCategory'>
             <h3>{this.props.title}</h3>
