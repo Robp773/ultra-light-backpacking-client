@@ -1,10 +1,10 @@
 .addForm {
-  color: whitesmoke;
   font-weight: bold;
-  width: fit-content;
-  padding: 10px;
+  width: 100%;
+  padding: 10px 0;
   position: relative;
   border: 1px solid black;
+  margin: auto;
 }
 
 .hikingFormBG {
@@ -68,4 +68,17 @@ addFormSubmit {
 
 legend {
   margin: auto;
+}
+
+@media screen and (max-width: 321px) {
+  .addForm {
+    padding: 1px;
+    width: 100%;
+  }
+  .addInputName {
+    width: 40%;
+  }
+  .addInputWeight {
+    width: 10%;
+  }
 }
