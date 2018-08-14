@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { updateItem, deleteItem } from "../actions";
 import { NotificationManager } from "react-notifications";
 import { CSSTransitionGroup } from "react-transition-group";
+import { API_BASE_URL } from "../config";
 
 export class ListTable extends React.Component {
   constructor(props) {
@@ -14,17 +15,41 @@ export class ListTable extends React.Component {
   }
 
   handleChange(values, index) {
-    // values refers to the new value of the list item
-    this.props.dispatch(
-      updateItem(values, index, this.props.title.toLowerCase())
-    );
+    const dispatchPromise = () =>
+      new Promise((resolve, reject) => {
+        this.props.dispatch(
+          updateItem(values, index, this.props.title.toLowerCase())
+        );
+        resolve();
+      });
+
+    dispatchPromise().then(() => {
+      fetch(`${API_BASE_URL}/list-state/${this.props.fullState.listName}`, {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.props.fullState)
+      });
+    });
   }
-  // if user clicks the delete button on a specific list item
 
   handleDeleteClick(index) {
     // open alert modal
     NotificationManager.warning("Item Deleted");
-    this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index));
+
+    const dispatchPromise = () =>
+      new Promise((resolve, reject) => {
+        console.log(this.props.fullState);
+        this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index));
+        resolve();
+      });
+
+    dispatchPromise().then(() => {
+      fetch(`${API_BASE_URL}/list-state/${this.props.fullState.listName}`, {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.props.fullState)
+      });
+    });
   }
 
   render() {
@@ -35,8 +60,6 @@ export class ListTable extends React.Component {
       const name = "name" + index;
       const weight = "weight" + index;
       const importance = "importance" + index;
-      console.log(item);
-
       return (
         <fieldset
           key={index}
@@ -51,7 +74,7 @@ export class ListTable extends React.Component {
             );
           }}
         >
-          <div className='fieldParent'>
+          <div className="fieldParent">
             <input
               className="listInput nameInput"
               ref={input => {
@@ -124,7 +147,7 @@ export class ListTable extends React.Component {
     }
     return (
       <div className="scrollableParent">
-        <form className={'listItemForm ' + this.props.title.toLowerCase() + 'BG'}>
+        <form className={`listItemForm ${this.props.title.toLowerCase()}BG`}>
           <CSSTransitionGroup
             transitionName="displayItems"
             transitionEnterTimeout={0}

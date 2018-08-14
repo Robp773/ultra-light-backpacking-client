@@ -11,6 +11,7 @@ export class ListHome extends React.Component{
   }
 
   render(){
+    console.log(this.props.fullState)
       const categories = {
         hiking: this.props.hiking,
         clothing: this.props.clothing,
@@ -48,6 +49,8 @@ let totalWeight = categoryKeys.reduce((accumulator, category)=>{
         let categoryTitle = CATEGORIES[category];
         let categoryImage = IMAGES[category];
         return <Category 
+                listName={this.props.listName}
+                fullState={this.props.fullState}
                 key={category}
                 title={categoryTitle}
                 imgSrc={`images/category-icons/${categoryImage}`}

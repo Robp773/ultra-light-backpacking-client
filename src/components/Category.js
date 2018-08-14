@@ -27,7 +27,7 @@ export default class Category extends React.Component {
     if (this.state.formOpen === true) {
       buttonSymbol = <i className="fa fa-minus  addOrSub" aria-hidden="true" />;
       //  initialize an AddForm component with the Category's title
-      addForm = <AddForm key={this.props.title} title={this.props.title} />;
+      addForm = <AddForm fullState={this.props.fullState} listName={this.props.listName} key={this.props.title} title={this.props.title} />;
     } else {
       // otherwise button symbol = '+'
       buttonSymbol = <i className="fa fa-plus addOrSub" aria-hidden="true" />;
@@ -70,6 +70,7 @@ export default class Category extends React.Component {
           </CSSTransitionGroup>
 
           <ListTable
+            fullState={this.props.fullState}
             title={this.props.title}
             thisState={this.props.thisState}
           />

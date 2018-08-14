@@ -3,6 +3,7 @@ import "./AddForm.css";
 import { connect } from "react-redux";
 import { addItem } from "../actions";
 import { NotificationManager } from "react-notifications";
+import { API_BASE_URL } from "../config";
 
 export class AddForm extends React.Component {
   onSubmit(e) {
@@ -19,15 +20,28 @@ export class AddForm extends React.Component {
       }
     }
 
-    // filtered title so it can be used to match with state properties
-    // ex. - First Aid = firstaid
     const readiedTitle = this.props.title.toLowerCase().replace(/\s+/g, "");
-    this.props.dispatch(addItem(name, weight, importance, readiedTitle));
+
+    const dispatchPromise = () =>
+      new Promise((resolve, reject) => {
+        this.props.dispatch(addItem(name, weight, importance, readiedTitle));
+        resolve();
+      });
+
+    dispatchPromise().then(() => {
+      fetch(`${API_BASE_URL}/list-state/${this.props.listName}`, {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.props.fullState)
+      });
+    });
+
     // reset form inputs
-    document.getElementById("addForm").reset();
+    document.getElementsByClassName("addForm")[0].reset();
   }
 
   render() {
+    console.log(this.props.fullState);
     return (
       <form
         className={`addForm ${this.props.title.toLowerCase()}FormBG`}

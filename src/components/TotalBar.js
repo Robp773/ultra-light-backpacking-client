@@ -10,28 +10,30 @@ import Feedback from "./Feedback.js";
 export class TotalBar extends React.Component {
   // if the user changes the goal weight input, update the state
   handleInputChange(value) {
+    const dispatchPromise = () =>
+      new Promise((resolve, reject) => {
+        this.props.dispatch(updateGoal(value));
+        resolve();
+      });
+
+    dispatchPromise().then(() => {
+      fetch(`${API_BASE_URL}/list-state/${this.props.fullState.listName}`, {
+        method: "put",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(this.props.fullState)
+      });
+    });
     this.props.dispatch(updateGoal(value));
   }
   // allow the user to see the SelectLists component again
   handleListsClick() {
     this.props.seeListsAgain();
   }
-  // send the current state of the client to the server in a put request
-  handleSaveClick() {
-    // display alert modal
-    NotificationManager.success("List Saved");
-    fetch(`${API_BASE_URL}/list-state/${this.props.listName}`, {
-      method: "put",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(this.props.fullState)
-    });
-  }
 
   render() {
     let totalsObj = this.props.totals;
     let totalLbs, weightClass, feedback;
     let weightGoal = this.props.fullState.weightGoal;
-
     totalLbs = Number(totalsObj.totalWeight.toFixed(2));
     let exceededNum = weightGoal - totalLbs;
 
@@ -76,41 +78,32 @@ export class TotalBar extends React.Component {
           >
             <i className="fa fa-list-alt" aria-hidden="true" />
           </button>
-          <button
-            className="saveBtn"
-            onClick={() => {
-              this.handleSaveClick();
-            }}
-          >
-            <i className="fa fa-floppy-o" aria-hidden="true" />
-          </button>
         </div>
 
         <div className="totalContainer">
-          <header>
-            Pack Light
-          </header>
+          <header>Pack Light</header>
           <h3>{this.props.listName}</h3>
+          <div className="statsParent">
+            <div className="">{totalLbs} Total lbs</div>
 
-          <div className="">{totalLbs} Total lbs</div>
+            <div className="">{totalsObj.totalItems} Items </div>
 
-          <div className="">{totalsObj.totalItems} Items </div>
+            <div className=""> Class: {weightClass}</div>
 
-          <div className=""> Class: {weightClass}</div>
-
-          <div className="">
-            <label className="">Weight Goal: </label>
-            <input
-              ref={input => (this.goalInput = input)}
-              className="setGoal"
-              placeholder={totalsObj.weightGoal}
-              onChange={() => {
-                this.handleInputChange(Number(this.goalInput.value));
-              }}
-            />{" "}
-            lbs
+            <div className="">
+              <label className="">Weight Goal: </label>
+              <input
+                ref={input => (this.goalInput = input)}
+                className="setGoal"
+                placeholder={totalsObj.weightGoal}
+                onChange={() => {
+                  this.handleInputChange(Number(this.goalInput.value));
+                }}
+              />
+              lbs
+            </div>
+            <Feedback feedback={feedback} />
           </div>
-          <Feedback feedback={feedback} />
         </div>
       </div>
     );
