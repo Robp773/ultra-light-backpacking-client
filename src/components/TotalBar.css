@@ -1,135 +1,131 @@
 .topCategory {
-	display: inline-block;
-	position: relative;
+  display: inline-block;
+  position: relative;
+}
+
+.chartBtn {
+  float: right;
+}
+.listBtn {
+  float: left;
 }
 
 .categoryIcon {
-	width: 50px;
-	float: right;
-	margin: 5px;
+  width: 50px;
+  float: right;
+  margin: 5px;
 }
 .totalBarContainer {
-	background: url('/images/mountainBG.jpg');
-	background-size: cover;
-	text-align: center;
+  background: url("/images/mountainBG.jpg");
+  background-size: cover;
+  text-align: center;
 }
 
 header {
-	width: 90%;
-	display: inline-block;
-	font-size: 35px;
-	margin-bottom: 3px;
-	margin-top: 3px;
+  display: inline-block;
+  margin-bottom: 3px;
+  margin-top: 3px;
 }
 
 .setGoal {
-	width: 8%;
-    text-align: center;
+  width: 8%;
+  text-align: center;
 }
 
 .totalContainer {
-	color: white;
-	font-weight: bold;
-	font-size: 20px;
-	width: 100%;
-	height: max-content;
-	background: rgba(0,0,0,.5);
-	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  width: 100%;
+  height: max-content;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-
-
-.sideBar {
-	z-index: 1;
-	position: fixed;
-	left: 85%;
-}
-
-.showListsBtn, .saveBtn {
-	font-size: 25px;
-	margin: 2px;
-	display: block;
-	width: 100%;
-	align-content: center;
+.headerBtns {
+  font-size: 20px;
+  padding: 5px;
+  margin: 5px;
 }
 
 ::placeholder {
-	color: black;
+  color: black;
 }
 
 .feedback {
-	color: black;
-	padding: 5px;
-	font-size: 15px;
-	margin-top: 5px;
+  color: black;
+  padding: 5px;
+  font-size: 15px;
+  margin-top: 5px;
 }
 
 /* desktops + tablets */
 
 @media screen and (min-width: 550px) {
-	header {
-		width: 50%;
-	}
-	.sideBar {
-		margin: 5px;
-		z-index: 1;
-		position: fixed;
-		left: 75%;
-		padding: 1px;
-	}
-	.totalContainer {
-		width: 100%;
-		text-align: center;
-	}
-	.divTotal, .divResult {
-		width: 45%;
-		margin-right: 3px;
-		margin-left: 3px;
-	}
-	.totalBarContainer {
-		width: 50%;
-		margin: auto;
-	}
-	.totalDiv {
-		display: block;
-	}
-	.setGoal {
-		width: 10%;
-	}
+  header {
+    width: 50%;
+  }
+  .sideBar {
+    margin: 5px;
+    z-index: 1;
+    position: fixed;
+    left: 75%;
+    padding: 1px;
+  }
+  .totalContainer {
+    width: 100%;
+    text-align: center;
+  }
+  .divTotal,
+  .divResult {
+    width: 45%;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+  .totalBarContainer {
+    width: 50%;
+    margin: auto;
+  }
+  .totalDiv {
+    display: block;
+  }
+  .setGoal {
+    width: 10%;
+  }
 }
 
 /* iPhone 5 */
 
 @media screen and (max-width: 320px) {
-	.listNamesParent {
-		width: 100%;
-	}
-	header {
-		font-size: 33px;
-	}
+  .listNamesParent {
+    width: 100%;
+  }
+  header {
+    font-size: 33px;
+  }
 }
 
 .bgColorDiv {
-	width: 60%;
-	display: inline-block;
+  width: 60%;
+  display: inline-block;
 }
 
 @media screen and (min-width: 400px) {
-	.addForm {
-		margin: auto;
-	}
+  .addForm {
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 550px) {
-	.bgColorDiv {
-		width: 75%;
-	}
+  .bgColorDiv {
+    width: 75%;
+  }
 }
 
 @media screen and (min-width: 950px) {
-	.bgColorDiv {
-		width: 40%;
-	}
+  .bgColorDiv {
+    width: 40%;
+  }
 }
