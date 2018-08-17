@@ -27,3 +27,14 @@ export const setListState = (listState)=>({
     type: 'SET_STATE',
     state: listState
 });
+
+export const openClose = (uiName)=>({
+    type: 'OPEN_CLOSE',
+    name: uiName
+})
+
+export const switchChart = (prevChart, newChart)=>({
+    type: 'SWITCH_CHART',
+    newChart: newChart,
+    prevChart: prevChart
+})
