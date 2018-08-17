@@ -1,11 +1,12 @@
 import React from "react";
 import "./TotalBar.css";
 import { connect } from "react-redux";
-import { updateGoal } from "../actions";
+import { updateGoal, openClose } from "../actions";
 import { API_BASE_URL } from "../config";
 import "react-notifications/lib/notifications.css";
-import { NotificationManager } from "react-notifications";
 import Feedback from "./Feedback.js";
+import ChartModal from "./ChartModal";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export class TotalBar extends React.Component {
   // if the user changes the goal weight input, update the state
@@ -30,13 +31,23 @@ export class TotalBar extends React.Component {
     this.props.seeListsAgain();
   }
 
+  handleChartsClick() {
+    this.props.dispatch(openClose("chartsModal"));
+  }
+
   render() {
+
+    let chartModal;
     let totalsObj = this.props.totals;
     let totalLbs, weightClass, feedback;
     let weightGoal = this.props.fullState.weightGoal;
-    totalLbs = Number(totalsObj.totalWeight.toFixed(2));
     let exceededNum = weightGoal - totalLbs;
 
+    totalLbs = Number(totalsObj.totalWeight.toFixed(2));
+
+    if (this.props.fullState.ui.chartsModal) {
+      chartModal = <ChartModal totalListWeight={totalLbs} fullState={this.props.fullState} />;
+    }
     // setting weightClass variable depending on the total pack weight
     if (totalLbs === 0) {
       weightClass = "Waiting for Items";
@@ -68,20 +79,27 @@ export class TotalBar extends React.Component {
 
     return (
       <div className="totalBarContainer">
-        {/* fixed side bar */}
-        <div className="sideBar">
+        {chartModal}
+        <div className="totalContainer">
           <button
-            className="showListsBtn"
+            className="headerBtns listBtn"
             onClick={() => {
               this.handleListsClick();
             }}
           >
-            <i className="fa fa-list-alt" aria-hidden="true" />
+            <FontAwesomeIcon icon="list-alt" />
           </button>
-        </div>
-
-        <div className="totalContainer">
           <header>Pack Light</header>
+
+          <button
+            className="headerBtns chartBtn"
+            onClick={() => {
+              this.handleChartsClick();
+            }}
+          >
+            <FontAwesomeIcon icon="chart-pie" />
+          </button>
+
           <h3>{this.props.listName}</h3>
           <div className="statsParent">
             <div className="">{totalLbs} Total lbs</div>
