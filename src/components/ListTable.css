@@ -1,24 +1,19 @@
-@keyframes slideDown {
-  0% {
-    max-height: 0px;
-  }
-  100% {
-    max-height: 200px;
-  }
-}
 .scrollableParent {
   background: #d3d0cb;
   font-size: 0;
   text-align: center;
   overflow-y: scroll;
-  max-height: 200px;
-  animation: 0.17s slideDown ease-in-out;
 }
 .weightColumn,
 .nameColumn {
   display: inline-block;
   width: 50%;
   font-size: 15px;
+}
+
+.deleteBtn {
+  background: whitesmoke;
+  /* border: 1px solid gray; */
 }
 h4 {
   margin: 0;
@@ -49,7 +44,6 @@ fieldset {
   background-repeat: no-repeat;
   font-size: 18px;
   color: black;
-  transition: height 1s;
 }
 
 .nameInput {
@@ -120,27 +114,26 @@ fieldset {
 
 .fieldParent {
   display: inline-block;
-  width: 86%;
   background: whitesmoke;
   margin: auto;
 }
 
-.displayItems-enter {
-  opacity: 0.01;
+.hideShowList-enter {
+  max-height: 0;
+}
+.hideShowList-enter.hideShowList-enter-active {
+  max-height: 500px;
+  transition: max-height 0.5s ease-in;
 }
 
-.displayItems-enter.displayItems-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in;
+.hideShowList-leave {
+  max-height: 500px;
 }
+/* .form-leave.form-leave-active */
 
-.displayItems-leave {
-  opacity: 1;
-}
-
-.displayItems-leave.displayItems-leave-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+.hideShowList-leave.hideShowList-leave-active {
+  max-height: 0;
+  transition: max-height 0.5s ease-in;
 }
 /* iphone 5/SE */
 @media screen and (max-width: 321px) {
@@ -148,3 +141,10 @@ fieldset {
     width: 97%;
   }
 }
+
+@media screen and (min-width: 1000px) {
+  .fieldParent{
+    width: 85%;
+  }
+}
+
