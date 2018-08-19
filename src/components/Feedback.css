@@ -1,11 +1,8 @@
-.underliner{
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-top: 0px solid black;
-    width: 0%;
-}
 
 #feedbackParent{
     width: fit-content;
     margin: auto;
+    /* background: rgba(0,0,0,.5); */
+    padding: 5px;
+    margin: 5px auto;
 }
