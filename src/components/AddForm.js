@@ -41,7 +41,6 @@ export class AddForm extends React.Component {
   }
 
   render() {
-    console.log(this.props.fullState);
     return (
       <form
         className={`addForm ${this.props.title.toLowerCase()}FormBG`}
