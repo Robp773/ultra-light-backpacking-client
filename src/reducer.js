@@ -15,8 +15,8 @@ const initialState = {
     chartsModal: false,
     chartSelect: {
       weight_Pie: false,
-      category_Pie: false,
-      impCat_Bar: true
+      category_Pie: true,
+      impCat_Bar: false
     }
   }
 };
