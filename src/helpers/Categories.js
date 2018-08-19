@@ -2,11 +2,12 @@ export const CATEGORIES = {
   hiking: 'Hiking',
   clothing: 'Clothing',
   navigation: 'Navigation',
-  shelter: 'Shelter',
   sleep: 'Sleep',
   cooking: 'Cooking',
   water: 'Water',
   hygiene: 'Hygiene',
+  shelter: 'Shelter',
+
   firstAid: 'FirstAid',
   misc: 'Misc',
 }
