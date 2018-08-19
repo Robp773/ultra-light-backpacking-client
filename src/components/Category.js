@@ -3,7 +3,6 @@ import "./Category.css";
 import AddForm from "./AddForm";
 import ListTable from "./ListTable";
 import CategoryTotal from "./CategoryTotal";
-import { CSSTransitionGroup } from "react-transition-group";
 
 export default class Category extends React.Component {
   state = {
@@ -27,7 +26,13 @@ export default class Category extends React.Component {
     if (this.state.formOpen === true) {
       buttonSymbol = <i className="fa fa-minus  addOrSub" aria-hidden="true" />;
       //  initialize an AddForm component with the Category's title
-      addForm = <AddForm fullState={this.props.fullState} listName={this.props.listName} key={this.props.title} title={this.props.title} />;
+      addForm = (
+        <AddForm
+          fullState={this.props.fullState}
+          listName={this.props.listName}
+          title={this.props.title}
+        />
+      );
     } else {
       // otherwise button symbol = '+'
       buttonSymbol = <i className="fa fa-plus addOrSub" aria-hidden="true" />;
@@ -45,6 +50,7 @@ export default class Category extends React.Component {
     if (this.state.selected === true) {
       return (
         <section
+          id={this.props.title.toLowerCase()}
           className="category"
           onClick={() => {
             this.setState({ selected: !this.state.selected });
@@ -60,16 +66,10 @@ export default class Category extends React.Component {
           >
             {buttonSymbol}
           </button>
-
-          <CSSTransitionGroup
-            transitionName="form"
-            transitionEnterTimeout={0}
-            transitionLeaveTimeout={0}
-          >
-            {addForm}
-          </CSSTransitionGroup>
+          {addForm}
 
           <ListTable
+            key={this.props.title}
             fullState={this.props.fullState}
             title={this.props.title}
             thisState={this.props.thisState}
@@ -81,7 +81,8 @@ export default class Category extends React.Component {
     else {
       return (
         <section
-          className="category"
+          id={this.props.title.toLowerCase()}
+          className="categoryCompact category"
           onClick={() => {
             this.setState({ selected: !this.state.selected });
           }}
