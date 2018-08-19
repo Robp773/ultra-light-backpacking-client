@@ -3,7 +3,7 @@ import "./ListTable.css";
 import { connect } from "react-redux";
 import { updateItem, deleteItem } from "../actions";
 import { NotificationManager } from "react-notifications";
-import { CSSTransitionGroup } from "react-transition-group";
+
 import { API_BASE_URL } from "../config";
 
 export class ListTable extends React.Component {
@@ -38,7 +38,6 @@ export class ListTable extends React.Component {
 
     const dispatchPromise = () =>
       new Promise((resolve, reject) => {
-        console.log(this.props.fullState);
         this.props.dispatch(deleteItem(this.props.title.toLowerCase(), index));
         resolve();
       });
@@ -148,13 +147,7 @@ export class ListTable extends React.Component {
     return (
       <div className="scrollableParent">
         <form className={`listItemForm ${this.props.title.toLowerCase()}BG`}>
-          <CSSTransitionGroup
-            transitionName="displayItems"
-            transitionEnterTimeout={0}
-            transitionLeaveTimeout={0}
-          >
-            {displayItems}
-          </CSSTransitionGroup>
+          {displayItems}
         </form>
       </div>
     );
