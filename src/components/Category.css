@@ -28,6 +28,8 @@ h3 {
   position: absolute;
   top: 0;
   right: 0;
+  background: whitesmoke;
+  border: 1px solid gray;
   display: inline-block;
 }
 .resultItemSection {
@@ -46,24 +48,6 @@ h3 {
 .emptyListDiv {
   background: #d3d0cb;
 }
-
-.form-enter {
-  opacity: 0;
-}
-
-.form-enter.form-enter-active {
-  opacity: 1;
-  transition: opacity 0.25s ease-in;
-}
-
-.form-leave {
-  opacity: 1;
-}
-
-.form-leave.form-leave-active {
-  opacity: 0;
-  transition: opacity 0.25s ease-in;
-}
 @media screen and (min-width: 550px) {
   .category {
     margin: auto;
@@ -72,6 +56,25 @@ h3 {
   .name {
     width: 45%;
   }
-  .deleteBtn {
+}
+
+
+
+
+@media screen and (min-width: 1000px) {
+  .category {
+    width: 100%;
+  }
+
+  .categoryCompact{
+    height: 10vh;
+    position: relative;
+    border-bottom: 1px solid black;
+  }
+
+}
+@media screen and (max-height: 600px) {
+  .categoryCompact{
+    height: auto;
   }
 }
