@@ -2,9 +2,7 @@ import React from "react";
 import "./ChartModal.css";
 import { openClose, switchChart } from "../actions.js";
 import { connect } from "react-redux";
-import { CATEGORIES } from "../helpers/Categories";
 import { Pie, Bar } from "react-chartjs-2";
-import { defaults } from "react-chartjs-2";
 import "chartjs-plugin-datalabels";
 
 export class ChartModal extends React.Component {
@@ -183,8 +181,6 @@ export class ChartModal extends React.Component {
         water: { critical: 0, important: 0, unimportant: 0 }
       }
     };
-
-    let index = 0;
     for (let b = 0; b < orderedCategories.length; b++) {
       let category = orderedCategories[b];
 
@@ -248,15 +244,14 @@ export class ChartModal extends React.Component {
       selectedChart = (
         <Bar
           data={dataObj[currentChart]}
-          width={300}
-          height={300}
+          width={200}
+          height={200}
           options={dataObj[currentChart].options}
         />
       );
     }
 
     return (
-      <div className="modalBG">
         <div id="chartContainer">
           <button
             id="exitBtn"
@@ -268,13 +263,15 @@ export class ChartModal extends React.Component {
           </button>
           <div id="chartBtns">
             <button
+              className="chartSelectBtn"
               onClick={() => {
                 this.props.dispatch(switchChart(currentChart, "weight_Pie"));
               }}
             >
               Item Importance
             </button>
-            <button
+            <button autoFocus
+              className="chartSelectBtn"
               onClick={() => {
                 this.props.dispatch(switchChart(currentChart, "category_Pie"));
               }}
@@ -282,6 +279,7 @@ export class ChartModal extends React.Component {
               Category Weights
             </button>
             <button
+              className="chartSelectBtn"
               onClick={() => {
                 this.props.dispatch(switchChart(currentChart, "impCat_Bar"));
               }}
@@ -291,7 +289,6 @@ export class ChartModal extends React.Component {
           </div>
           {selectedChart}
         </div>
-      </div>
     );
   }
 }
