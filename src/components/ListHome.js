@@ -4,7 +4,6 @@ import Category from "./Category";
 import TotalBar from "./TotalBar";
 import { connect } from "react-redux";
 import { CATEGORIES, IMAGES } from "../helpers/Categories";
-import ChartModal from "./ChartModal";
 
 export class ListHome extends React.Component {
   super(props) {
@@ -15,12 +14,12 @@ export class ListHome extends React.Component {
     const categories = {
       hiking: this.props.hiking,
       clothing: this.props.clothing,
-      navigation: this.props.navigation,
-      shelter: this.props.shelter,
       sleep: this.props.sleep,
       cooking: this.props.cooking,
       water: this.props.water,
       hygiene: this.props.hygiene,
+      navigation: this.props.navigation,
+      shelter: this.props.shelter,
       firstAid: this.props.firstaid,
       misc: this.props.misc
     };
@@ -30,11 +29,12 @@ export class ListHome extends React.Component {
       hiking,
       clothing,
       navigation,
-      shelter,
       sleep,
       cooking,
       water,
       hygiene,
+      shelter,
+
       firstaid,
       misc
     } = this.props.fullState;
@@ -42,11 +42,12 @@ export class ListHome extends React.Component {
       hiking,
       clothing,
       navigation,
-      shelter,
       sleep,
       cooking,
       water,
       hygiene,
+      shelter,
+
       firstaid,
       misc
     ];
@@ -88,7 +89,9 @@ export class ListHome extends React.Component {
     return (
       <div className="homePage">
         <TotalBar seeListsAgain={this.props.seeListsAgain} totals={totals} />
+        <div id='wrapper'>
         {renderCategories}
+        </div>
       </div>
     );
   }
