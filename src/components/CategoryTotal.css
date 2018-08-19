@@ -7,7 +7,7 @@
   background: #bd3d3a;
 }
 #clothing {
-  background: #3f69aa;
+  background: #2e4a62;
 }
 
 #navigation {
@@ -25,7 +25,7 @@
 }
 
 #water {
-  background: #2e4a62;
+  background: #3f69aa;
 }
 
 #hygiene {
@@ -45,7 +45,8 @@
   float: right;
   margin: 5px;
 }
-.bgColorDiv {
+.categoryTotalText {
+  position: relative;
   width: 60%;
   color: white;
   display: inline-block;
@@ -59,5 +60,13 @@
 @media screen and (min-width: 950px) {
   .bgColorDiv {
     width: 40%;
+  }
+  .categoryParent{
+    padding: 5px;
+  }
+
+  .categoryTotalText{
+    top: 10%;
+
   }
 }
