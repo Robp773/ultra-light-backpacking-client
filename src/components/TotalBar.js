@@ -36,18 +36,32 @@ export class TotalBar extends React.Component {
   }
 
   render() {
-
     let chartModal;
     let totalsObj = this.props.totals;
     let totalLbs, weightClass, feedback;
     let weightGoal = this.props.fullState.weightGoal;
+    totalLbs = Number(totalsObj.totalWeight.toFixed(2));
     let exceededNum = weightGoal - totalLbs;
 
-    totalLbs = Number(totalsObj.totalWeight.toFixed(2));
-
     if (this.props.fullState.ui.chartsModal) {
-      chartModal = <ChartModal totalListWeight={totalLbs} fullState={this.props.fullState} />;
+      chartModal = (
+        <div className="modalBG">
+          <ChartModal
+            totalListWeight={totalLbs}
+            fullState={this.props.fullState}
+          />
+        </div>
+      );
     }
+
+    let desktopChartModal = (
+      <div id="desktopChart">
+        <ChartModal
+          totalListWeight={totalLbs}
+          fullState={this.props.fullState}
+        />
+      </div>
+    );
     // setting weightClass variable depending on the total pack weight
     if (totalLbs === 0) {
       weightClass = "Waiting for Items";
@@ -79,7 +93,7 @@ export class TotalBar extends React.Component {
 
     return (
       <div className="totalBarContainer">
-        {chartModal}
+        
         <div className="totalContainer">
           <button
             className="headerBtns listBtn"
@@ -89,7 +103,7 @@ export class TotalBar extends React.Component {
           >
             <FontAwesomeIcon icon="list-alt" />
           </button>
-          <header>Pack Light</header>
+          <header id='titleHeader'>Pack Light</header>
 
           <button
             className="headerBtns chartBtn"
@@ -100,14 +114,11 @@ export class TotalBar extends React.Component {
             <FontAwesomeIcon icon="chart-pie" />
           </button>
 
-          <h3>{this.props.listName}</h3>
           <div className="statsParent">
+            <h3>{this.props.listName}</h3>
             <div className="">{totalLbs} Total lbs</div>
-
             <div className="">{totalsObj.totalItems} Items </div>
-
             <div className=""> Class: {weightClass}</div>
-
             <div className="">
               <label className="">Weight Goal: </label>
               <input
@@ -121,6 +132,8 @@ export class TotalBar extends React.Component {
               lbs
             </div>
             <Feedback feedback={feedback} />
+            {chartModal}
+        {desktopChartModal}
           </div>
         </div>
       </div>

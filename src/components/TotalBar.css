@@ -10,6 +10,13 @@
   float: left;
 }
 
+.chartBtn,
+.listBtn {
+  background: whitesmoke;
+  font-size: 15px;
+  border: 1px solid gray;
+}
+
 .categoryIcon {
   width: 50px;
   float: right;
@@ -38,7 +45,7 @@ header {
   font-size: 20px;
   width: 100%;
   height: max-content;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.35);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -46,8 +53,9 @@ header {
 
 .headerBtns {
   font-size: 20px;
-  padding: 5px;
+  padding: 4px;
   margin: 5px;
+  width: 10%;
 }
 
 ::placeholder {
@@ -96,6 +104,10 @@ header {
   }
 }
 
+#desktopChart{
+  display: none;
+}
+
 /* iPhone 5 */
 
 @media screen and (max-width: 320px) {
@@ -123,9 +135,38 @@ header {
     width: 75%;
   }
 }
-
 @media screen and (min-width: 950px) {
   .bgColorDiv {
     width: 40%;
   }
+}
+@media screen and (min-width: 1000px) {
+  .totalBarContainer {
+    width: 33%;
+    display: inline-block;
+    position: fixed;
+   left: 17%;
+    height: 100vh;
+  }
+  .totalContainer{
+    height: 100vh;;
+  }
+
+  #desktopChart{
+    display: inline-block;
+  }
+
+  .chartBtn{
+    display: none;
+  }
+
+  .listBtn{
+    width: 15%;
+    height: 5vh;
+    font-size: 25px;
+    padding: 3px;
+    position: absolute;
+    right: 100%;
+  }
+  
 }
